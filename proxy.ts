@@ -9,5 +9,8 @@ export default createMiddleware(routing);
 
 export const config = {
   // Skip API routes, Next internals and anything with a file extension.
-  matcher: "/((?!api|_next|_vercel|.*\..*).*)",
+  // The dot is double-escaped: in a plain string "\." collapses to ".", which
+  // made the pattern skip every path longer than one character, so only "/"
+  // ever got its French locale and /contact, /catalogue, ... 404'd.
+  matcher: "/((?!api|_next|_vercel|.*\\..*).*)",
 };
