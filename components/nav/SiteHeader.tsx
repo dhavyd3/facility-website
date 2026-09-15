@@ -19,15 +19,18 @@ export async function SiteHeader() {
     { href: "/contact", label: t("contact") },
   ];
 
+  // `index` is shown only in the mobile panel; the desktop menu shows names.
   const serviceLinks = services.map((service) => ({
     href: `/services/${service.slug}`,
     label: s(`${service.id}.name`),
-    objective: s(`${service.id}.objective`),
     index: service.index,
   }));
 
+  // The frosted background is a ::before layer (.site-header in globals.css),
+  // not a class on this element: backdrop-filter on the header itself would
+  // make it a Backdrop Root and stop the services menu's blur reaching the page.
   return (
-    <header className="sticky top-0 z-40 bg-cream/95 backdrop-blur-sm hairline-b">
+    <header className="site-header sticky top-0 z-40 hairline-b">
       <div className="shell flex items-center justify-between gap-6 py-5">
         <Logo priority width={148} />
 
@@ -41,7 +44,7 @@ export async function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className="meta whitespace-nowrap text-espresso transition-colors hover:text-gold"
+              className="meta nav-link whitespace-nowrap"
             >
               {link.label}
             </Link>

@@ -3,30 +3,27 @@
 import { useEffect, useId, useRef, useState } from "react";
 
 import { Link } from "@/i18n/navigation";
-import { RailNumber } from "@/components/ui/Meta";
 
 export type ServiceEntry = {
   href: string;
   label: string;
-  objective: string;
-  index: string;
 };
 
 /**
- * "Nos services" as a dropdown, built in Facility's own header language —
- * cream panel, gold hairline, the same 01-05 numbering the rail uses. Entries
- * come from lib/services.ts via SiteHeader, so the five lines cannot drift
- * apart from the rest of the site.
+ * "Nos services" as a small frosted dropdown showing service names only.
+ * Entries come from lib/services.ts via SiteHeader, so the five lines cannot
+ * drift apart from the rest of the site.
  *
  * The trigger stays a real link to /services: the panel augments it rather
  * than swallowing the click. Opens on hover and on keyboard focus, closes on
  * Escape, outside click, or focus leaving the group.
  *
- * Anchored inside the header on purpose. Note the header sets backdrop-blur,
- * and backdrop-filter establishes a containing block for absolute/fixed
- * descendants — which is exactly what made the mobile panel render at header
- * height once already. Anchoring to the header is the intent here; anything
- * that needs the viewport would have to be portalled instead.
+ * The panel is always rendered and switched with data-open + inert instead of
+ * the hidden attribute. `hidden` is display:none, which would leave the
+ * entrance animation nothing to animate; `inert` keeps the closed panel out of
+ * the tab order and the accessibility tree. The two visual layers, and why the
+ * glass animates its own opacity, are explained at .nav-dropdown in
+ * globals.css.
  */
 export function ServicesDropdown({
   label,
@@ -43,7 +40,7 @@ export function ServicesDropdown({
   );
 
   // A small delay on close keeps the panel from vanishing while the pointer
-  // crosses the gap between the trigger and the panel.
+  // crosses from the trigger to the panel.
   const openNow = () => {
     clearTimeout(closeTimer.current);
     setOpen(true);
@@ -123,41 +120,32 @@ export function ServicesDropdown({
         aria-expanded={open}
         aria-controls={panelId}
         /* Also on the trigger itself, not only the wrapper: tabbing to it
-           should reveal the panel, and this does not depend on focusin
-           bubbling to the containing div. */
+           should reveal the panel without depending on focusin bubbling. */
         onFocus={openNow}
-        className="meta whitespace-nowrap text-espresso transition-colors hover:text-gold"
+        className="meta nav-link whitespace-nowrap"
       >
         {label}
       </Link>
 
       <div
         id={panelId}
-        hidden={!open}
-        className="absolute start-0 top-full z-50 w-[26rem] border border-[var(--gold-rule-hair)] bg-cream shadow-[0_18px_50px_-28px_rgba(42,35,24,0.45)]"
+        className="nav-dropdown"
+        data-open={open}
+        inert={!open}
       >
-        <ul>
-          {services.map((service, i) => (
-            <li
-              key={service.href}
-              /* Not `last:border-b-0`: .hairline-b is unlayered CSS and would
-                 win over a layered Tailwind utility. */
-              className={i < services.length - 1 ? "hairline-b" : undefined}
-            >
+        <ul className="nav-dropdown__panel">
+          {services.map((service) => (
+            <li key={service.href}>
               <Link
                 href={service.href}
                 data-dd-item
-                className="group block px-6 py-4 transition-colors hover:bg-champagne/40"
+                className="nav-dropdown__item"
                 onClick={() => setOpen(false)}
               >
-                <span className="flex items-baseline gap-3">
-                  <RailNumber>{service.index}</RailNumber>
-                  <span className="display text-xl transition-colors group-hover:text-gold">
-                    {service.label}
-                  </span>
-                </span>
-                {/* A description, not a label — so plain text, not <Meta>. */}
-                <p className="mt-2 text-sm text-muted">{service.objective}</p>
+                {/* .meta gives the navbar face, and trims the underline so it
+                    ends at the last letter. The underline lives on the label,
+                    not the padded row, so it spans the words only. */}
+                <span className="meta nav-link">{service.label}</span>
               </Link>
             </li>
           ))}

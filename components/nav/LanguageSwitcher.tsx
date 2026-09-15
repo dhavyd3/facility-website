@@ -34,10 +34,12 @@ export function LanguageSwitcher() {
             href={pathname}
             locale={locale}
             aria-current={locale === active ? "true" : undefined}
+            /* Colour and the hover underline come from .nav-link. The active
+               locale is gold via aria-current; the other rests muted. */
             className={
               locale === active
-                ? "meta text-gold"
-                : "meta text-muted hover:text-gold"
+                ? "meta nav-link"
+                : "meta nav-link nav-link--muted"
             }
           >
             {locale.toUpperCase()}

@@ -44,6 +44,11 @@
   --gold-rule-faint: rgba(176, 141, 74, 0.22);
   --gold-rule-hair: rgba(176, 141, 74, 0.38);
 
+  /* Text-safe deeper gold for the frosted services menu. The glass can sit
+     over dark sections, where brand gold reaches only 3.60:1; this step
+     of the same hue is 4.63:1 there and 7.22:1 on cream. */
+  --color-gold-deep: #65501d;
+
   --measure: 68ch;
   --gutter: clamp(1.25rem, 4vw, 5rem);
   --shell: 1440px;
@@ -117,6 +122,10 @@ body {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   line-height: 1.2;
+  /* An underline spans the box, and the box includes the tracking after
+     the last letter. Trim it so the line ends at the final glyph. It is
+     inherited, so a label nested inside a .meta link picks it up too. */
+  --underline-trim: 0.18em;
 }
 
 .meta + .meta {
@@ -204,20 +213,25 @@ body {
    Facility's equivalent of that cool tone is --forest, which sits at
    12.56:1 on cream, so it is safe as a text colour.
    ------------------------------------------------------------------ */
-.link-underline {
+.link-underline,
+.nav-link {
   position: relative;
-  color: var(--color-gold);
   text-decoration: none;
   transition: color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.link-underline {
+  color: var(--color-gold);
+}
+
 /* Pinned to the bottom, full width, 1px tall: an underline, not an edge
    bar. scripts/check-design-rules.mjs keys on that shape difference. */
-.link-underline::after {
+.link-underline::after,
+.nav-link::after {
   content: "";
   position: absolute;
   left: 0;
-  right: 0;
+  right: var(--underline-trim, 0);
   bottom: -0.18em;
   height: 1px;
   background: currentColor;
@@ -255,6 +269,171 @@ body {
   color: var(--color-champagne);
 }
 
+/* --------------------------- Header glass ---------------------------
+   Content scrolling under the sticky header is blurred out rather than
+   faintly readable through it.
+
+   The blur lives on a ::before layer, NOT on the header element. An
+   element with backdrop-filter becomes a Backdrop Root, and the services
+   menu is a descendant of the header: with the filter on the header
+   itself, the menu's own blur could never reach the page below it. A
+   pseudo-element has no descendants, so there is nothing to cut off.
+
+   0.92 opacity keeps the 12px nav text at AA even over the espresso
+   section: gold 4.82:1, muted 5.28:1, espresso 12.47:1.
+   ------------------------------------------------------------------ */
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(250, 247, 241, 0.92);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  pointer-events: none;
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .site-header::before {
+    background: rgba(250, 247, 241, 0.98);
+  }
+}
+
+/* ------------------------ Navbar hover -----------------------------
+   The same wipe, retuned for the header. Links rest in espresso and
+   move to gold: the page-link target (forest) is almost the same
+   luminance as espresso, so that colour change would not show here.
+   Gold on the 95%-opaque header is still 5.10:1 over the espresso
+   section, which matters because the header is sticky.
+   ------------------------------------------------------------------ */
+.nav-link {
+  color: var(--color-espresso);
+}
+
+.nav-link--muted {
+  color: var(--color-muted);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link[aria-current="true"],
+.nav-link[aria-expanded="true"] {
+  color: var(--color-gold);
+}
+
+/* The trigger keeps its underline drawn while its menu is open: an
+   open-state marker in navigation, which Rule 1 explicitly allows. */
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link[aria-expanded="true"]::after {
+  transform: scaleX(1);
+}
+
+/* ---------------------- Services dropdown --------------------------
+   A small frosted panel that drops out of the "Nos services" trigger
+   and settles into place.
+
+   Two layers, and the split matters:
+   - .nav-dropdown positions the panel and adds a transparent 12px hover
+     bridge, so the pointer never leaves the component while crossing
+     from trigger to panel. It toggles visibility only.
+   - .nav-dropdown__panel is the glass, and it animates its OWN opacity.
+     An ancestor with opacity below 1 becomes a Backdrop Root, which
+     would cut the blur off from the page for the whole fade and pop it
+     in at the end. For the same reason the header's own blur sits on a
+     ::before layer, not on the header element (see Header glass).
+
+   Contrast: cream glass at 0.78 keeps resting espresso text at 9.32:1
+   even over the espresso section (the sticky header means the menu can
+   open anywhere). The labels are small uppercase text, so hover text
+   needs 4.5:1 there: brand gold reaches only 3.60:1 over that glass, so
+   the menu hovers to --color-gold-deep, the same hue a step darker, 4.63:1.
+   ------------------------------------------------------------------ */
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 50;
+  padding-top: 12px;
+  transform: translateX(-50%);
+  visibility: hidden;
+  /* Closing: stay visible until the fade has finished. */
+  transition: visibility 0s linear 0.2s;
+}
+
+.nav-dropdown[data-open="true"] {
+  visibility: visible;
+  transition: visibility 0s;
+}
+
+.nav-dropdown__panel {
+  width: max-content;
+  padding: 0.4rem 0;
+  border: 1px solid var(--gold-rule-hair);
+  border-radius: 22px;
+  background: rgba(250, 247, 241, 0.78);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 24px 60px -30px rgba(42, 35, 24, 0.45);
+  opacity: 0;
+  transform: translateY(-10px) scale(0.96);
+  transform-origin: top center;
+  transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+}
+
+.nav-dropdown[data-open="true"] .nav-dropdown__panel {
+  opacity: 1;
+  transform: none;
+  /* Opening is slow and decelerating, so the panel lands, not snaps. */
+  transition: opacity 0.48s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.62s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .nav-dropdown__panel {
+    background: rgba(250, 247, 241, 0.97);
+  }
+}
+
+/* The label carries .meta, the navbar face (Jost, uppercase, 0.18em
+   tracking, 12px), so the menu reads as a continuation of the nav. */
+.nav-dropdown__item {
+  display: block;
+  padding: 1rem 1.9rem;
+  border-radius: 14px; /* keeps the focus ring inside the rounded panel */
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* A hairline between services that fades out toward both ends, so it
+   reads as a rule rather than a table border. Drawn as a background on
+   the row, not a border or pseudo-element, so it sits between rows and
+   can never read as an edge accent. */
+.nav-dropdown__panel > li + li {
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--gold-rule-hair) 20%,
+    var(--gold-rule-hair) 80%,
+    transparent
+  );
+  background-repeat: no-repeat;
+  background-size: calc(100% - 2.5rem) 1px;
+  background-position: center top;
+}
+
+/* The whole row is the hit area, so hovering its padding still drives
+   the label, not only hovering the text itself. */
+.nav-dropdown__item:hover .nav-link,
+.nav-dropdown__item:focus-visible .nav-link {
+  color: var(--color-gold-deep);
+}
+
+.nav-dropdown__item:hover .nav-link::after,
+.nav-dropdown__item:focus-visible .nav-link::after {
+  transform: scaleX(1);
+}
+
 /* ----------------- Capsule hover: the fill sweep -------------------
    The same left-to-right motion and timing as the link underline, so
    the two interaction styles read as one system. A capsule cannot take
@@ -266,6 +445,8 @@ body {
 .btn {
   position: relative;
   overflow: hidden;
+  /* Pill ends. overflow: hidden clips the fill sweep to the same shape. */
+  border-radius: 9999px;
   font-family: var(--font-label);
   font-size: 0.75rem;
   font-weight: 500;
@@ -458,6 +639,8 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .link-underline,
   .link-underline::after,
+  .nav-link,
+  .nav-link::after,
   .btn,
   .btn::before,
   .rail-diamond {
@@ -469,6 +652,11 @@ body {
   .link-underline:focus-visible::after,
   .group:hover .link-underline::after,
   .group:focus-visible .link-underline::after,
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after,
+  .nav-link[aria-expanded="true"]::after,
+  .nav-dropdown__item:hover .nav-link::after,
+  .nav-dropdown__item:focus-visible .nav-link::after,
   .btn:hover::before,
   .btn:focus-visible::before {
     transform: none;
@@ -476,6 +664,13 @@ body {
 
   .rail__vline {
     clip-path: none;
+  }
+
+  /* The menu fades in place: no drop, no scale. */
+  .nav-dropdown__panel,
+  .nav-dropdown[data-open="true"] .nav-dropdown__panel {
+    transform: none;
+    transition: opacity 0.2s ease;
   }
 }
 
