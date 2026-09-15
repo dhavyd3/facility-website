@@ -1,0 +1,162 @@
+{
+  "meta": {
+    "tagline": "Make your life easy",
+    "subtitle": "Coaching · Events · Services"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Our services",
+    "about": "About",
+    "catalogue": "Catalogue",
+    "contact": "Contact",
+    "quote": "Request a quote",
+    "menu": "Menu",
+    "close": "Close",
+    "language": "Language",
+    "skipToContent": "Skip to content"
+  },
+  "home": {
+    "eyebrow": "Facility services",
+    "title": "Comfort, wellbeing and joy — <em>at home and everywhere else</em>.",
+    "intro": "Events, coaching, housekeeping, property management, purchasing. Five disciplines, one point of contact, one standard.",
+    "cta": "Request a quote",
+    "ctaSecondary": "See our services",
+    "facts": {
+      "services": { "label": "Services", "value": "Five disciplines" },
+      "contact": { "label": "Point of contact", "value": "Just one" },
+      "quote": { "label": "Quote", "value": "Within 48 h" },
+      "commitment": { "label": "Commitment", "value": "None" }
+    },
+    "mission": {
+      "eyebrow": "What we believe",
+      "title": "Our services can put <em>that \"wow\"</em> on your face.",
+      "body": "We create comfort, wellbeing and joy — in the family and everywhere else. That is our mission, and it is the only measure that matters to us.",
+      "valuesLabel": "Our values"
+    },
+    "values": {
+      "responsibility": "Responsibility",
+      "integrity": "Integrity",
+      "excellence": "Excellence",
+      "service": "Service"
+    },
+    "railEyebrow": "Our services",
+    "railTitle": "Five disciplines, <em>one standard</em>.",
+    "closing": {
+      "title": "Tell us what's weighing on you. <em>We'll take it from here.</em>",
+      "body": "One conversation is enough to know how we can help.",
+      "cta": "Get in touch"
+    }
+  },
+  "services": {
+    "eyebrow": "Our services",
+    "title": "Five disciplines, <em>one standard</em>.",
+    "intro": "Each service answers one clear objective: lift a weight off you, and give you back your time.",
+    "objectiveLabel": "Our objective",
+    "audienceLabel": "Who it's for",
+    "learnMore": "Learn more",
+    "events": {
+      "name": "Event planning",
+      "short": "Family events and beyond",
+      "objective": "Lift the weight of organising off your family.",
+      "audience": "Families, individuals, companies",
+      "title": "Your event, <em>without the load</em>.",
+      "body": "From birthdays to large family gatherings, we take on the design, the suppliers, the schedule and the day itself. You stay the host; we carry everything else.",
+      "cta": "Talk about your event"
+    },
+    "coaching": {
+      "name": "Teen coaching",
+      "short": "Guidance through the teenage years",
+      "objective": "Help your teenager through the adolescent crisis and build a better future.",
+      "audience": "Parents and teenagers",
+      "title": "Through adolescence, <em>and stronger for it</em>.",
+      "body": "Patient, structured, confidential support: confidence, direction, family relationships, study method. We work with the teenager, and with the parents.",
+      "cta": "Book a first session"
+    },
+    "home": {
+      "name": "Housekeeping and decoration",
+      "short": "Regular cleaning and interior decoration",
+      "objective": "Create beauty and calm in your homes and your offices.",
+      "audience": "Homes and offices",
+      "title": "A clean home, <em>a quiet mind</em>.",
+      "body": "A regular visit, a consistent team, a standard that doesn't move. And if you'd like it, a decorator's eye — so the space isn't only clean, but beautiful.",
+      "cta": "Schedule a visit"
+    },
+    "property": {
+      "name": "Property management",
+      "short": "Airbnb, apartments, property at a distance",
+      "objective": "Let you collect your rent without the hassle.",
+      "audience": "Absent or busy owners",
+      "title": "Your property, <em>in good hands</em>.",
+      "body": "For owners far from their property, or simply too busy: welcoming tenants, upkeep, small repairs, rent tracking and a regular report. You collect; we keep watch.",
+      "cta": "Entrust a property"
+    },
+    "sourcing": {
+      "name": "Purchase facilitation",
+      "short": "Online and local products",
+      "objective": "Let you do your shopping in comfort.",
+      "audience": "Individuals and companies",
+      "title": "What you need, <em>found and delivered</em>.",
+      "body": "Online or in local markets, we search, compare, negotiate and deliver. Tell us what you're looking for and we'll come back with a clear proposal.",
+      "cta": "Make a request"
+    }
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "We believe an easier life <em>is built</em>.",
+    "missionLabel": "Our mission",
+    "mission": "We create comfort, wellbeing and joy — in the family and everywhere else.",
+    "convictionLabel": "What we believe",
+    "conviction": "Our services can put that \"wow\" on your face.",
+    "valuesLabel": "Our values",
+    "valuesIntro": "Responsibility, integrity, excellence and service — to make your life easy.",
+    "objectivesLabel": "Our objectives"
+  },
+  "catalogue": {
+    "eyebrow": "Purchase facilitation",
+    "title": "Tell us what you're looking for. <em>We'll handle it.</em>",
+    "intro": "Browse the categories, add what interests you to your request, and we'll come back with a proposal.",
+    "addToRequest": "Add to my request",
+    "inRequest": "In your request",
+    "viewRequest": "View my request",
+    "emptyRequest": "Your request is empty.",
+    "noPriceNote": "Prices depend on availability and quantity. We send a costed proposal once you've sent your request.",
+    "requestTitle": "Your request",
+    "submitRequest": "Send my request"
+  },
+  "forms": {
+    "name": "Full name",
+    "email": "Email address",
+    "phone": "Phone",
+    "message": "Your message",
+    "service": "Service",
+    "date": "Preferred date",
+    "time": "Preferred time",
+    "frequency": "Frequency",
+    "frequencyOnce": "One time",
+    "frequencyWeekly": "Weekly",
+    "frequencyBiweekly": "Every two weeks",
+    "frequencyMonthly": "Monthly",
+    "guests": "Number of guests",
+    "eventType": "Type of event",
+    "propertyType": "Type of property",
+    "propertyCount": "Number of properties",
+    "city": "City",
+    "submit": "Send",
+    "sending": "Sending…",
+    "required": "This field is required.",
+    "invalidEmail": "Invalid email address.",
+    "successTitle": "Thank you — received.",
+    "successBody": "We'll come back to you within 48 hours.",
+    "errorTitle": "That didn't send.",
+    "errorBody": "Please try again, or write to us directly.",
+    "quoteNote": "We take no payment online. Every request receives a costed proposal."
+  },
+  "footer": {
+    "tagline": "Make your life easy.",
+    "servicesLabel": "Services",
+    "companyLabel": "Company",
+    "contactLabel": "Contact",
+    "rights": "All rights reserved.",
+    "quoteOnly": "Quotes on request — no online payment."
+  }
+}

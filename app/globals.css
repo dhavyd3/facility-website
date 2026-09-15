@@ -1,0 +1,496 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   FACILITY SERVICES — design tokens
+   Colours sampled from logo/ by pixel census, then contrast-verified.
+   Brand gold is a deep olive-bronze (#786024), dark enough to be text.
+   ------------------------------------------------------------------ */
+@theme {
+  /* Surfaces */
+  --color-cream: #faf7f1;
+  --color-champagne: #eadfcb;
+  --color-espresso: #2a2318;
+  --color-forest: #1f3329;
+  --color-ink: #1a150e;
+
+  /* Gold, text-safe steps ONLY. The decorative step is deliberately
+     NOT a theme colour, so no `text-*` utility can ever reach it. */
+  --color-gold: #786024; /* on cream 5.62:1 AA · on champagne 4.55:1 AA */
+  --color-gold-on-dark: #c9a46a; /* on espresso 6.66:1 AA · on forest 5.76:1 AA */
+
+  /* Label tones. Rule 2 puts all meaning in the text colour, so every one
+     of these is contrast-verified as TEXT on both its grounds. Each role has
+     a light-ground step and a dark-ground step; the ground picks, not the
+     caller (see [data-tone] below). */
+  --color-muted: #655c4e;       /* cream 6.15:1 · champagne 4.98:1 */
+  --color-positive: #2f5d3a;    /* cream 7.15:1 · champagne 5.79:1 */
+  --color-attention: #7e5216;   /* cream 6.32:1 · champagne 5.12:1 */
+  --color-negative: #8c2f24;    /* cream 7.71:1 · champagne 6.25:1 */
+
+  --color-muted-on-dark: #a79a85;     /* espresso 5.62:1 · forest 4.86:1 */
+  --color-positive-on-dark: #8fbf9c;  /* espresso 7.47:1 · forest 6.46:1 */
+  --color-attention-on-dark: #d9a857; /* espresso 7.17:1 · forest 6.20:1 */
+  --color-negative-on-dark: #e0928a;  /* espresso 6.40:1 · forest 5.53:1 */
+
+  --font-display: var(--font-bodoni), "Iowan Old Style", Palatino, Georgia, serif;
+  --font-label: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  /* DECORATIVE ONLY — 2.91:1 on cream. Hairlines, dividers, arrow glyphs.
+     Never a text colour. scripts/check-design-rules.mjs enforces this. */
+  --gold-rule: #b08d4a;
+  --gold-rule-faint: rgba(176, 141, 74, 0.22);
+  --gold-rule-hair: rgba(176, 141, 74, 0.38);
+
+  --measure: 68ch;
+  --gutter: clamp(1.25rem, 4vw, 5rem);
+  --shell: 1440px;
+}
+
+html {
+  color-scheme: light;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-espresso);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-champagne);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* ---------------------------- Typography --------------------------- */
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.06;
+  text-wrap: balance;
+}
+
+/* The signature device: roman headline, emphasis phrase in gold italic. */
+.display em {
+  font-style: italic;
+  color: var(--color-gold);
+}
+
+.on-dark .display em,
+.display.on-dark em {
+  color: var(--color-gold-on-dark);
+}
+
+.display-xl { font-size: clamp(2.75rem, 7vw, 6rem); }
+.display-lg { font-size: clamp(2.25rem, 5vw, 4rem); }
+.display-md { font-size: clamp(1.75rem, 3.2vw, 2.75rem); }
+
+.prose-measure {
+  max-width: var(--measure);
+}
+
+/* ------------------------------ Rule 2 -----------------------------
+   Non-interactive labels are PLAIN TEXT. The meaning lives in the
+   text colour. No pill, no border, no fill, no padding that would
+   imply a hit area. Capsules belong to Button / FilterChip / Tab.
+
+   Because these labels carry no padding of their own, adjacent ones
+   need real space — set on the ADJACENCY, not the container.
+   ------------------------------------------------------------------ */
+.meta {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.meta + .meta {
+  margin-inline-start: 20px;
+}
+
+/* A tone names the ROLE; the ground picks the text-safe step. Callers write
+   tone="positive" and never have to know which background they landed on. */
+.meta[data-tone="accent"] { color: var(--color-gold); }
+.meta[data-tone="muted"] { color: var(--color-muted); }
+.meta[data-tone="positive"] { color: var(--color-positive); }
+.meta[data-tone="attention"] { color: var(--color-attention); }
+.meta[data-tone="negative"] { color: var(--color-negative); }
+
+.on-dark .meta[data-tone="accent"],
+.on-forest .meta[data-tone="accent"] { color: var(--color-gold-on-dark); }
+.on-dark .meta[data-tone="muted"],
+.on-forest .meta[data-tone="muted"] { color: var(--color-muted-on-dark); }
+.on-dark .meta[data-tone="positive"],
+.on-forest .meta[data-tone="positive"] { color: var(--color-positive-on-dark); }
+.on-dark .meta[data-tone="attention"],
+.on-forest .meta[data-tone="attention"] { color: var(--color-attention-on-dark); }
+.on-dark .meta[data-tone="negative"],
+.on-forest .meta[data-tone="negative"] { color: var(--color-negative-on-dark); }
+
+/* ------------------------- Editorial grid --------------------------
+   The Nest's device: visible hairlines dividing the page into cells.
+   Pure CSS, no extra DOM.
+   ------------------------------------------------------------------ */
+.shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.hairline-t { border-block-start: 1px solid var(--gold-rule-hair); }
+.hairline-b { border-block-end: 1px solid var(--gold-rule-hair); }
+
+/* Vertical column rules drawn as a background, so no leading-edge
+   pseudo-element strips are needed anywhere (see Rule 1). */
+.ruled-columns {
+  --ruled-step: 25%;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--gold-rule-faint) 0 1px,
+    transparent 1px var(--ruled-step)
+  );
+}
+
+@media (max-width: 767px) {
+  .ruled-columns { --ruled-step: 50%; }
+}
+
+/* ---------------------------- Reveals ------------------------------
+   RevealObserver adds `is-in` as each element enters the viewport.
+
+   No JS arms this state: an inline script that mutated <html> before
+   hydration made React discard the tree, and React refuses to execute
+   in-component <script> tags on the client anyway. So the hidden state
+   lives in CSS, and the <noscript> block in the layout restores full
+   visibility for anyone without JS.
+   ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ------------------- Link hover: the underline wipe ----------------
+   Measured off the reference recording at native frame rate: the
+   underline wipes LEFT to RIGHT over ~0.35s while the colour moves
+   gold -> deep cool tone. One frame caught the first word already
+   recoloured and underlined while the last word was still gold, which
+   is what identified it as a scaleX wipe rather than a fade.
+
+   Facility's equivalent of that cool tone is --forest, which sits at
+   12.56:1 on cream, so it is safe as a text colour.
+   ------------------------------------------------------------------ */
+.link-underline {
+  position: relative;
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Pinned to the bottom, full width, 1px tall: an underline, not an edge
+   bar. scripts/check-design-rules.mjs keys on that shape difference. */
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.18em;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* The label often sits inside a larger link, so the wrapper's hover and
+   keyboard focus have to drive it too — otherwise a tabbing user gets the
+   colour change with no underline. */
+.link-underline:hover,
+.link-underline:focus-visible,
+.group:hover .link-underline,
+.group:focus-visible .link-underline {
+  color: var(--color-forest);
+}
+
+.link-underline:hover::after,
+.link-underline:focus-visible::after,
+.group:hover .link-underline::after,
+.group:focus-visible .link-underline::after {
+  transform: scaleX(1);
+}
+
+.on-dark .link-underline,
+.on-forest .link-underline {
+  color: var(--color-gold-on-dark);
+}
+
+.on-dark .link-underline:hover,
+.on-dark .link-underline:focus-visible,
+.on-forest .link-underline:hover,
+.on-forest .link-underline:focus-visible {
+  color: var(--color-champagne);
+}
+
+/* ----------------- Capsule hover: the fill sweep -------------------
+   The same left-to-right motion and timing as the link underline, so
+   the two interaction styles read as one system. A capsule cannot take
+   an underline sensibly, so the motion is expressed as a fill instead.
+
+   The layer is inset on all four sides — a surface being transformed,
+   not a narrow leading-edge strip.
+   ------------------------------------------------------------------ */
+.btn {
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--btn-fill, var(--color-espresso));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn:hover::before,
+.btn:focus-visible::before {
+  transform: scaleX(1);
+}
+
+/* Keep the label above the sweeping fill. */
+.btn > * {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-solid {
+  background: var(--color-espresso);
+  color: var(--color-cream);
+  border: 1px solid var(--color-espresso);
+  --btn-fill: var(--color-ink); /* cream on ink 16.97:1 */
+}
+
+.btn-solid:hover,
+.btn-solid:focus-visible {
+  border-color: var(--color-ink);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+  --btn-fill: var(--color-gold);
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  color: var(--color-cream); /* cream on gold 5.62:1 */
+}
+
+.btn-quiet {
+  background: transparent;
+  color: var(--color-gold);
+  border: 1px solid transparent;
+  --btn-fill: var(--color-champagne);
+}
+
+.btn-quiet:hover,
+.btn-quiet:focus-visible {
+  color: var(--color-forest); /* forest on champagne 10.18:1 */
+  border-color: var(--gold-rule);
+}
+
+/* --------------------- The services scroll rail --------------------
+   A dash-dot staircase whose vertical segment grows with scroll, with
+   markers flipping hollow -> filled as each service is reached and a
+   diamond+arrowhead terminal on the last one. Measured from the
+   recording: dash 17px, gap 6px, dot 3px, gap 6px, 2px stroke.
+
+   Drawn in SVG on purpose. This is a standalone navigational diagram
+   living in its own reserved gutter, not a coloured bar decorating a
+   row's leading edge to signal status — which is the thing Rule 1
+   forbids. The row itself carries no border, fill or accent, and the
+   section labels stay plain <Meta> text.
+   ------------------------------------------------------------------ */
+:root {
+  --rail-step: 100px; /* staircase offset per service */
+  --rail-track: 140px; /* gutter reserved left of the content */
+  --rail-marker: 16px;
+}
+
+/* The staircase costs (services - 1) * step of content width, so the step
+   has to come down before the last row gets squeezed. At 1440 the fifth row
+   still has its full 672px measure; below 1280 it would not. */
+@media (max-width: 1279px) {
+  :root {
+    --rail-step: 60px;
+    --rail-track: 100px;
+  }
+}
+
+@media (max-width: 1023px) {
+  :root {
+    /* Four steps of drift will not fit at all; collapse to a straight
+       vertical rail. */
+    --rail-step: 0px;
+    --rail-track: 34px;
+  }
+}
+
+.rail__row {
+  position: relative;
+  padding-inline-start: calc(var(--rail-track) + var(--i) * var(--rail-step));
+  /* Scroll progress through this row, 0..1. Defaults to fully drawn so the
+     rail is complete with no JS and under reduced motion; RailProgress
+     lowers it only when it is actually driving the animation. */
+  --p: 1;
+}
+
+@media (min-width: 768px) {
+  .rail__row {
+    min-height: 65vh;
+  }
+}
+
+.rail__marker,
+.rail__vline,
+.rail__connector {
+  position: absolute;
+  pointer-events: none;
+}
+
+.rail__marker {
+  inset-block-start: 0;
+  inset-inline-start: calc(var(--i) * var(--rail-step));
+  width: var(--rail-marker);
+  height: var(--rail-marker);
+  overflow: visible;
+}
+
+.rail__vline {
+  inset-inline-start: calc(var(--i) * var(--rail-step));
+  inset-block-start: var(--rail-marker);
+  width: var(--rail-marker);
+  /* An <svg> is a replaced element: with top+bottom set but height:auto it
+     falls back to its intrinsic 150px instead of stretching, so the height
+     has to be stated. */
+  height: calc(100% - var(--rail-marker));
+  /* Clip rather than animate height, so the dash pattern stays anchored at
+     the top instead of crawling as the line grows. */
+  clip-path: inset(0 0 calc((1 - var(--p)) * 100%) 0);
+}
+
+.rail__connector {
+  inset-block-start: 0;
+  inset-inline-start: calc((var(--i) - 1) * var(--rail-step));
+  width: calc(var(--rail-step) + var(--rail-marker));
+  height: var(--rail-marker);
+}
+
+@media (max-width: 1023px) {
+  /* With no horizontal step there is nothing for a connector to span. */
+  .rail__connector {
+    display: none;
+  }
+}
+
+/* Paint stroke and fill straight from the decorative token rather than
+   routing through `color` + currentColor. Setting `color` here would be
+   indistinguishable from setting a TEXT colour, and --gold-rule is only
+   2.91:1 on cream — the design-rule guard flags that on sight, correctly. */
+.rail-stroke {
+  fill: none;
+  stroke: var(--gold-rule);
+  stroke-width: 2;
+  stroke-dasharray: 17 6 3 6;
+}
+
+.rail-diamond {
+  fill: none;
+  stroke: var(--gold-rule);
+  stroke-width: 1.5;
+  transition: fill 0.4s ease;
+}
+
+.rail__row[data-state="reached"] .rail-diamond {
+  fill: var(--gold-rule);
+}
+
+.rail-arrow {
+  fill: var(--gold-rule);
+}
+
+/* ----------------------- Reduced motion --------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .link-underline,
+  .link-underline::after,
+  .btn,
+  .btn::before,
+  .rail-diamond {
+    transition: none;
+  }
+
+  /* The affordance still needs to appear — just without the travel. */
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after,
+  .group:hover .link-underline::after,
+  .group:focus-visible .link-underline::after,
+  .btn:hover::before,
+  .btn:focus-visible::before {
+    transform: none;
+  }
+
+  .rail__vline {
+    clip-path: none;
+  }
+}
+
+/* --------------------------- Dark sections ------------------------- */
+.on-dark {
+  background: var(--color-espresso);
+  color: var(--color-champagne);
+}
+
+.on-forest {
+  background: var(--color-forest);
+  color: var(--color-champagne);
+}
+
+.on-dark .meta,
+.on-forest .meta {
+  color: var(--color-gold-on-dark);
+}

@@ -1,0 +1,162 @@
+{
+  "meta": {
+    "tagline": "Make your life easy",
+    "subtitle": "Coaching · Événements · Services"
+  },
+  "nav": {
+    "home": "Accueil",
+    "services": "Nos services",
+    "about": "À propos",
+    "catalogue": "Catalogue",
+    "contact": "Contact",
+    "quote": "Demander un devis",
+    "menu": "Menu",
+    "close": "Fermer",
+    "language": "Langue",
+    "skipToContent": "Aller au contenu"
+  },
+  "home": {
+    "eyebrow": "Facility services",
+    "title": "Le confort, le bien-être et la joie — <em>en famille et partout ailleurs</em>.",
+    "intro": "Événements, coaching, ménage, gestion locative, achats. Cinq métiers, un seul interlocuteur, une même exigence.",
+    "cta": "Demander un devis",
+    "ctaSecondary": "Découvrir nos services",
+    "facts": {
+      "services": { "label": "Services", "value": "Cinq métiers" },
+      "contact": { "label": "Interlocuteur", "value": "Un seul" },
+      "quote": { "label": "Devis", "value": "Sous 48 h" },
+      "commitment": { "label": "Engagement", "value": "Aucun" }
+    },
+    "mission": {
+      "eyebrow": "Notre conviction",
+      "title": "Nos services peuvent créer <em>l'effet « WOAUW »</em> sur vos visages.",
+      "body": "Nous créons le confort, le bien-être et la joie en famille et partout ailleurs. C'est notre mission, et c'est la seule mesure qui compte à nos yeux.",
+      "valuesLabel": "Nos valeurs"
+    },
+    "values": {
+      "responsibility": "Responsabilité",
+      "integrity": "Intégrité",
+      "excellence": "Excellence",
+      "service": "Service"
+    },
+    "railEyebrow": "Nos services",
+    "railTitle": "Cinq métiers, <em>une même exigence</em>.",
+    "closing": {
+      "title": "Dites-nous ce qui vous pèse. <em>Nous nous en occupons.</em>",
+      "body": "Un échange suffit pour savoir comment nous pouvons vous aider.",
+      "cta": "Nous écrire"
+    }
+  },
+  "services": {
+    "eyebrow": "Nos services",
+    "title": "Cinq métiers, <em>une même exigence</em>.",
+    "intro": "Chaque service répond à un objectif précis : vous décharger d'un poids, et vous rendre du temps.",
+    "objectiveLabel": "Notre objectif",
+    "audienceLabel": "Pour qui",
+    "learnMore": "En savoir plus",
+    "events": {
+      "name": "Organisation d'événements",
+      "short": "Événements familiaux et autres",
+      "objective": "Décharger votre famille du poids de l'organisation.",
+      "audience": "Familles, particuliers, entreprises",
+      "title": "Votre événement, <em>sans la charge</em>.",
+      "body": "Des anniversaires aux grandes réunions de famille, nous prenons en main la conception, les prestataires, le calendrier et le jour J. Vous restez l'hôte ; nous portons tout le reste.",
+      "cta": "Parler de votre événement"
+    },
+    "coaching": {
+      "name": "Coaching d'adolescents",
+      "short": "Accompagnement des adolescents",
+      "objective": "Aider votre adolescent à surmonter la crise d'adolescence et à bâtir un meilleur avenir.",
+      "audience": "Parents et adolescents",
+      "title": "Traverser l'adolescence, <em>et en sortir plus fort</em>.",
+      "body": "Un accompagnement patient, structuré et confidentiel : confiance en soi, orientation, relations familiales, méthode de travail. Nous travaillons avec l'adolescent, et avec les parents.",
+      "cta": "Réserver un premier entretien"
+    },
+    "home": {
+      "name": "Ménage et décoration",
+      "short": "Propreté régulière et décoration intérieure",
+      "objective": "Créer la beauté et l'apaisement dans vos maisons et dans vos bureaux.",
+      "audience": "Maisons et bureaux",
+      "title": "Une maison nette, <em>un esprit tranquille</em>.",
+      "body": "Un passage régulier, une équipe constante, un standard qui ne bouge pas. Et si vous le souhaitez, un regard de décoration pour que l'espace ne soit pas seulement propre, mais beau.",
+      "cta": "Planifier un passage"
+    },
+    "property": {
+      "name": "Gestion de biens locatifs",
+      "short": "Airbnb, appartements, biens à distance",
+      "objective": "Vous permettre d'encaisser facilement vos loyers.",
+      "audience": "Propriétaires absents ou occupés",
+      "title": "Votre bien, <em>entre de bonnes mains</em>.",
+      "body": "Pour les propriétaires loin de leurs biens ou simplement trop occupés : accueil des locataires, entretien, petites réparations, suivi des loyers et compte rendu régulier. Vous recevez ; nous veillons.",
+      "cta": "Confier un bien"
+    },
+    "sourcing": {
+      "name": "Facilitation d'achat",
+      "short": "Achats en ligne et produits locaux",
+      "objective": "Vous permettre de réaliser confortablement vos achats.",
+      "audience": "Particuliers et entreprises",
+      "title": "Ce qu'il vous faut, <em>trouvé et livré</em>.",
+      "body": "En ligne ou sur les marchés locaux, nous cherchons, comparons, négocions et livrons. Dites-nous ce que vous cherchez : nous revenons vers vous avec une proposition claire.",
+      "cta": "Faire une demande"
+    }
+  },
+  "about": {
+    "eyebrow": "À propos",
+    "title": "Nous croyons qu'une vie plus simple <em>se construit</em>.",
+    "missionLabel": "Notre mission",
+    "mission": "Nous créons le confort, le bien-être et la joie en famille et partout ailleurs.",
+    "convictionLabel": "Notre conviction",
+    "conviction": "Nos services peuvent créer l'effet « WOAUW » sur vos visages.",
+    "valuesLabel": "Nos valeurs",
+    "valuesIntro": "La responsabilité, l'intégrité, l'excellence et le service — pour vous faciliter la vie.",
+    "objectivesLabel": "Nos objectifs"
+  },
+  "catalogue": {
+    "eyebrow": "Facilitation d'achat",
+    "title": "Dites-nous ce que vous cherchez. <em>Nous nous en occupons.</em>",
+    "intro": "Parcourez les catégories, ajoutez ce qui vous intéresse à votre demande, et nous revenons vers vous avec une proposition.",
+    "addToRequest": "Ajouter à ma demande",
+    "inRequest": "Dans votre demande",
+    "viewRequest": "Voir ma demande",
+    "emptyRequest": "Votre demande est vide.",
+    "noPriceNote": "Les prix dépendent de la disponibilité et de la quantité. Nous vous envoyons une proposition chiffrée après votre demande.",
+    "requestTitle": "Votre demande",
+    "submitRequest": "Envoyer ma demande"
+  },
+  "forms": {
+    "name": "Nom complet",
+    "email": "Adresse e-mail",
+    "phone": "Téléphone",
+    "message": "Votre message",
+    "service": "Service concerné",
+    "date": "Date souhaitée",
+    "time": "Heure souhaitée",
+    "frequency": "Fréquence",
+    "frequencyOnce": "Une fois",
+    "frequencyWeekly": "Chaque semaine",
+    "frequencyBiweekly": "Toutes les deux semaines",
+    "frequencyMonthly": "Chaque mois",
+    "guests": "Nombre d'invités",
+    "eventType": "Type d'événement",
+    "propertyType": "Type de bien",
+    "propertyCount": "Nombre de biens",
+    "city": "Ville",
+    "submit": "Envoyer",
+    "sending": "Envoi…",
+    "required": "Ce champ est requis.",
+    "invalidEmail": "Adresse e-mail invalide.",
+    "successTitle": "Merci — c'est reçu.",
+    "successBody": "Nous revenons vers vous sous 48 heures.",
+    "errorTitle": "L'envoi a échoué.",
+    "errorBody": "Merci de réessayer, ou de nous écrire directement.",
+    "quoteNote": "Nous ne prenons aucun paiement en ligne. Chaque demande reçoit une proposition chiffrée."
+  },
+  "footer": {
+    "tagline": "Make your life easy.",
+    "servicesLabel": "Services",
+    "companyLabel": "Entreprise",
+    "contactLabel": "Contact",
+    "rights": "Tous droits réservés.",
+    "quoteOnly": "Devis sur demande — aucun paiement en ligne."
+  }
+}
