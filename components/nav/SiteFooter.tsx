@@ -28,7 +28,7 @@ export async function SiteFooter() {
     <footer className="on-dark">
       <div className="shell grid gap-14 py-20 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <Logo theme="dark" width={190} />
+          <Logo theme="dark" size="footer" />
           <p className="display display-md mt-8 max-w-[18ch] text-champagne">
             {t("tagline")}
           </p>

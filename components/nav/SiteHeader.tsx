@@ -32,7 +32,7 @@ export async function SiteHeader() {
   return (
     <header className="site-header sticky top-0 z-40 hairline-b">
       <div className="shell flex items-center justify-between gap-6 py-5">
-        <Logo priority width={148} />
+        <Logo priority size="header" />
 
         <nav
           className="hidden items-center gap-8 xl:flex"

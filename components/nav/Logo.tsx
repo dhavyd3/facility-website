@@ -3,37 +3,56 @@ import { Link } from "@/i18n/navigation";
 import { site } from "@/site.config";
 
 /**
- * The supplied PNGs were 500x500 with only 446x132 of actual artwork, so they
- * are cropped to content in public/brand — same display size, far more of the
- * pixels doing work. `light` sits on cream, `dark` on espresso/forest.
+ * The lockup is two separate images, laid out the way the original single
+ * image arranged them: the F mark, then the wordmark to its right.
  *
- * An SVG is still on the open-items list for large display; at header size the
- * cropped raster is comfortably past 2x.
+ * They were split so the wordmark can be sized on its own. In the combined
+ * image the tagline was about 2.7px tall at header size and unreadable. Here
+ * the wordmark is 0.86 of the mark height (the old image used 0.68), which
+ * brings "MAKE YOUR LIFE EASY" to about 4px at 1x and 8px on retina screens.
+ *
+ * `light` sits on cream. `dark` is recoloured from the light parts for
+ * espresso/forest grounds: the F strokes and the wordmark move to the
+ * gold-on-dark step, and the filigree is softened so it stays as quiet as it
+ * is on cream.
+ *
+ * Sizes live in globals.css (.logo-lockup) as a single --logo-h variable, so
+ * the two images always scale together.
  */
+const MARK = { width: 245, height: 158 };
+const WORDMARK = { width: 348, height: 116 };
+
 export function Logo({
   theme = "light",
-  width = 150,
-  variant = "lockup",
+  size = "header",
   priority = false,
 }: {
   theme?: "light" | "dark";
-  width?: number;
-  variant?: "lockup" | "emblem" | "wordmark";
+  size?: "header" | "footer";
   priority?: boolean;
 }) {
-  const ratio = { lockup: 140 / 454, emblem: 140 / 178, wordmark: 140 / 280 }[
-    variant
-  ];
-
   return (
-    <Link href="/" className="inline-flex items-center" aria-label={site.name}>
+    <Link
+      href="/"
+      className={`logo-lockup logo-lockup--${size}`}
+      aria-label={site.name}
+    >
+      {/* Decorative: the link itself carries the accessible name. */}
       <Image
-        src={`/brand/facility-${variant}-${theme}.png`}
-        alt={site.name}
-        width={width}
-        height={Math.round(width * ratio)}
+        src={`/brand/facility-mark-${theme}.png`}
+        alt=""
+        width={MARK.width}
+        height={MARK.height}
         priority={priority}
-        style={{ width, height: "auto" }}
+        className="logo-lockup__mark"
+      />
+      <Image
+        src={`/brand/facility-wordmark-${theme}.png`}
+        alt=""
+        width={WORDMARK.width}
+        height={WORDMARK.height}
+        priority={priority}
+        className="logo-lockup__text"
       />
     </Link>
   );

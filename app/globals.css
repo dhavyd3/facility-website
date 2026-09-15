@@ -269,6 +269,45 @@ body {
   color: var(--color-champagne);
 }
 
+/* ------------------------------ Logo -------------------------------
+   Two images, the F mark and the wordmark, sized from one variable so
+   they always scale together. The wordmark is 0.86 of the mark height
+   (the old single image used 0.68, which left the tagline about 2.7px
+   tall in the header), sits just right of the swash, and is nudged 5%
+   down, matching how the original lockup centred its text on the circle.
+   ------------------------------------------------------------------ */
+.logo-lockup {
+  --logo-h: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--logo-h) * 0.02);
+}
+
+.logo-lockup__mark {
+  height: var(--logo-h);
+  width: auto;
+}
+
+.logo-lockup__text {
+  height: calc(var(--logo-h) * 0.86);
+  width: auto;
+  transform: translateY(calc(var(--logo-h) * 0.05));
+}
+
+.logo-lockup--header {
+  --logo-h: 44px;
+}
+
+@media (min-width: 1280px) {
+  .logo-lockup--header {
+    --logo-h: 56px;
+  }
+}
+
+.logo-lockup--footer {
+  --logo-h: 76px;
+}
+
 /* --------------------------- Header glass ---------------------------
    Content scrolling under the sticky header is blurred out rather than
    faintly readable through it.
