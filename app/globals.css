@@ -728,3 +728,683 @@ body {
 .on-forest .meta {
   color: var(--color-gold-on-dark);
 }
+
+/* ------------------------------ Fields -----------------------------
+   Underline fields (components/ui/Field.tsx). The resting line is the
+   decorative gold; on focus a 2px text-safe gold line wipes left to right
+   over it, the same motion as the link underline, and that line is the
+   focus indicator. The label identifies the field, in muted text at 6:1.
+   ------------------------------------------------------------------ */
+.field__box {
+  position: relative;
+  border-block-end: 1px solid var(--gold-rule);
+}
+
+.field__box::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--color-gold);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.field__box:focus-within::after {
+  transform: scaleX(1);
+}
+
+.field[data-invalid="true"] .field__box {
+  border-block-end-color: var(--color-negative);
+}
+
+.field[data-invalid="true"] .field__box::after {
+  background: var(--color-negative);
+}
+
+.field__control {
+  display: block;
+  width: 100%;
+  padding: 1.6rem 0 0.6rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-espresso);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+.field__control:focus,
+.field__control:focus-visible {
+  outline: none;
+}
+
+.field__control:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-cream) inset;
+  -webkit-text-fill-color: var(--color-espresso);
+}
+
+.field__control--area {
+  min-height: 8.5rem;
+  max-height: 24rem;
+  resize: vertical;
+  field-sizing: content;
+}
+
+/* Sits on the text line until focus or a value lifts it. */
+.field__label {
+  position: absolute;
+  top: 1.6rem;
+  left: 0;
+  color: var(--color-muted);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  pointer-events: none;
+  transform-origin: left top;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.field__control:focus + .field__label,
+.field__control:not(:placeholder-shown) + .field__label {
+  transform: translateY(-1.45rem) scale(0.78);
+}
+
+.field__control:focus + .field__label {
+  color: var(--color-gold);
+}
+
+.field[data-invalid="true"] .field__label {
+  color: var(--color-negative);
+}
+
+.field__optional {
+  color: var(--color-muted);
+}
+
+.field__foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.6rem;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+/* ------------------------------ Chips ------------------------------
+   Radio capsules (components/ui/FilterChip.tsx). Hover is the same fill
+   sweep as .btn; the chosen chip is espresso, and its small diamond fills
+   the way a rail marker does when it is reached.
+   ------------------------------------------------------------------ */
+.chip {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.chip__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chip__face {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 1.25rem;
+  border: 1px solid var(--gold-rule);
+  border-radius: 9999px;
+  color: var(--color-espresso);
+  font-family: var(--font-label);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  transition: color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.chip__face::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--color-champagne);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.chip__face > * {
+  position: relative;
+  z-index: 1;
+}
+
+.chip:hover .chip__face {
+  border-color: var(--color-gold);
+}
+
+.chip:hover .chip__face::before {
+  transform: scaleX(1);
+}
+
+.chip__input:focus-visible + .chip__face {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+.chip__input:checked + .chip__face {
+  border-color: var(--color-espresso);
+  color: var(--color-cream); /* cream on espresso 13.9:1 */
+}
+
+.chip__input:checked + .chip__face::before {
+  background: var(--color-espresso);
+  transform: scaleX(1);
+}
+
+.chip__mark {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--gold-rule);
+  transform: rotate(45deg) scale(0.9);
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.chip__input:checked + .chip__face .chip__mark {
+  border-color: var(--color-gold-on-dark);
+  background: var(--color-gold-on-dark);
+  transform: rotate(45deg) scale(1.15);
+}
+
+/* --------------------------- Contact form --------------------------
+   Three steps on a short version of the services rail. Like that rail it
+   is a diagram in its own gutter, not an accent on a row (Rule 1): the
+   fieldsets carry no border or fill. A step's diamond fills once it is
+   valid, and the dash-dot line draws down toward the next step.
+   ------------------------------------------------------------------ */
+.contact-form {
+  --step-indent: 3rem;
+  position: relative;
+}
+
+@media (max-width: 639px) {
+  .contact-form {
+    --step-indent: 2.25rem;
+  }
+}
+
+.form-step {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  padding: 0 0 3.75rem var(--step-indent);
+  border: 0;
+}
+
+.form-indent {
+  padding-inline-start: var(--step-indent);
+}
+
+/* Floated, so the legend lays out like an ordinary block. */
+.form-step__legend {
+  float: left;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  width: 100%;
+  padding: 0;
+}
+
+.form-step__title {
+  font-size: clamp(1.5rem, 2.4vw, 1.95rem);
+  line-height: 1.15;
+}
+
+.form-step__body {
+  clear: both;
+  padding-top: 1.75rem;
+}
+
+.form-step__marker,
+.form-step__track,
+.form-step__line {
+  position: absolute;
+  inset-inline-start: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.form-step__marker {
+  top: 0.6rem;
+}
+
+.form-step__track,
+.form-step__line {
+  top: calc(0.6rem + 22px);
+  height: calc(100% - 0.6rem - 30px);
+}
+
+.form-step__track line {
+  stroke: var(--gold-rule-hair);
+  stroke-width: 1;
+}
+
+.form-step__line {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.form-step[data-state="done"] .form-step__line {
+  clip-path: inset(0 0 0 0);
+}
+
+.form-step[data-state="done"] .rail-diamond {
+  fill: var(--gold-rule);
+}
+
+.contact-form__trap {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.contact-form__arrow {
+  display: inline-block;
+  margin-inline-start: 0.6rem;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn:hover .contact-form__arrow,
+.btn:focus-visible .contact-form__arrow {
+  transform: translateX(4px);
+}
+
+/* The thank-you: rail runs out, terminal lands, three glints go off. */
+
+/* Focus lands on the heading only so it is announced; it is not a control, so
+   no ring. Unlayered, which is what lets it outrank the global :focus-visible
+   (a Tailwind focus:outline-none sits in a layer and loses). */
+.form-sent__title:focus {
+  outline: none;
+}
+
+.form-sent__mark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+
+.form-sent__trail,
+.form-sent__terminal {
+  display: block;
+  overflow: visible;
+}
+
+.form-sent__spark {
+  position: absolute;
+}
+
+.form-sent__spark--1 { top: -20px; left: 178px; }
+.form-sent__spark--2 { top: 22px; left: 198px; }
+.form-sent__spark--3 { top: 18px; left: 140px; }
+
+.sparkle {
+  overflow: visible;
+}
+
+.sparkle path {
+  fill: var(--gold-rule);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .form-sent__trail {
+    animation: trail-draw 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .form-sent__terminal {
+    animation: terminal-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both;
+  }
+
+  .form-sent__spark {
+    animation: spark-pop 0.9s cubic-bezier(0.22, 1, 0.36, 1) both,
+      twinkle 3.6s ease-in-out 2.4s infinite;
+  }
+
+  .form-sent__spark--1 { animation-delay: 1s, 2.4s; }
+  .form-sent__spark--2 { animation-delay: 1.15s, 3.4s; }
+  .form-sent__spark--3 { animation-delay: 1.3s, 4.4s; }
+}
+
+@keyframes trail-draw {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes terminal-in {
+  from { opacity: 0; transform: translateX(-10px) scale(0.6); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes spark-pop {
+  0% { opacity: 0; transform: scale(0) rotate(-45deg); }
+  60% { opacity: 1; transform: scale(1.2) rotate(10deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+  50% { opacity: 0.25; transform: scale(0.55) rotate(45deg); }
+}
+
+/* -------------------------- Contact details ------------------------ */
+.contact-card {
+  position: relative;
+  padding: clamp(1.75rem, 3vw, 2.75rem);
+}
+
+.contact-card__spark {
+  position: absolute;
+  top: clamp(1.75rem, 3vw, 2.75rem);
+  right: clamp(1.75rem, 3vw, 2.75rem);
+}
+
+.contact-card__row,
+.contact-card__facts {
+  border-block-start: 1px solid rgba(176, 141, 74, 0.3);
+}
+
+.contact-card__row {
+  padding-block: 1.5rem;
+}
+
+.contact-card__value {
+  display: inline-block;
+  color: var(--color-champagne);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  transition: color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+a.contact-card__value:hover,
+a.contact-card__value:focus-visible {
+  color: var(--color-gold-on-dark);
+}
+
+.contact-card__value--pending {
+  color: var(--color-muted-on-dark);
+  font-style: italic;
+}
+
+.contact-card__facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  padding-top: 1.75rem;
+}
+
+.contact-icon {
+  flex: none;
+  fill: none;
+  stroke: var(--color-gold-on-dark);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.copy-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.copy-button[data-copied="true"] .link-underline {
+  color: var(--color-positive-on-dark);
+}
+
+/* ---------------------------- Catalogue ----------------------------
+   An exhibition before the exhibits: one large frame waiting for the
+   first project, then a wall with a frame reserved for each service.
+   The empty frames stay hollow, the same language as a rail marker that
+   has not been reached yet.
+   ------------------------------------------------------------------ */
+.empty-frame {
+  --mat: clamp(1.25rem, 3vw, 2rem);
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background-color: var(--color-champagne);
+}
+
+.empty-frame__dash {
+  position: absolute;
+  top: var(--mat);
+  left: var(--mat);
+  width: calc(100% - 2 * var(--mat));
+  height: calc(100% - 2 * var(--mat));
+  overflow: visible;
+}
+
+.frame-dash {
+  fill: none;
+  stroke: var(--gold-rule);
+  stroke-width: 1.5;
+  stroke-dasharray: 17 6 3 6;
+}
+
+.empty-frame__no {
+  position: absolute;
+  top: calc(var(--mat) + 1.25rem);
+  left: calc(var(--mat) + 1.4rem);
+}
+
+.empty-frame__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+}
+
+.empty-frame__diamond {
+  position: absolute;
+  top: -36px;
+  left: -36px;
+  overflow: visible;
+}
+
+.empty-frame__diamond path {
+  fill: var(--gold-rule);
+  fill-opacity: 0;
+  stroke: var(--gold-rule);
+  stroke-width: 1.5;
+}
+
+.empty-frame__spark {
+  position: absolute;
+}
+
+.empty-frame__spark--1 { top: -66px; left: 26px; }
+.empty-frame__spark--2 { top: 14px; left: -70px; }
+.empty-frame__spark--3 { top: 40px; left: 46px; }
+
+.gallery {
+  display: grid;
+  gap: 3.5rem 2rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 640px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 2.5rem;
+  }
+
+  /* A hung wall, not a spreadsheet: the middle column drops a little. */
+  .gallery__item:nth-child(3n + 2) {
+    margin-top: 4rem;
+  }
+}
+
+.gallery__frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background-color: var(--color-champagne);
+}
+
+.gallery__mat {
+  position: absolute;
+  inset: 14px;
+  border: 1px solid var(--gold-rule-hair);
+}
+
+.gallery__no {
+  position: absolute;
+  top: 1.9rem;
+  left: 2rem;
+}
+
+.gallery__diamond {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow: visible;
+  transform: translate(-50%, -50%);
+}
+
+.gallery__diamond path {
+  fill: none;
+  stroke: var(--gold-rule);
+  stroke-width: 1.5;
+}
+
+/* A light passing over the glass once as each frame is revealed, like a
+   photograph being developed. It plays once, so it never reads as loading. */
+.gallery__frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    rgba(250, 247, 241, 0.6) 50%,
+    transparent 65%
+  );
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+
+/* The reserved frame: no glass, a dash-dot outline, and room to grow if its
+   text needs more than the 4:5 box. */
+.gallery__frame--yours {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: visible;
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  background-color: transparent;
+}
+
+.gallery__frame--yours::after {
+  content: none;
+}
+
+.gallery__dash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.gallery__yours {
+  position: relative;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .frame-dash {
+    animation: dash-march 3.2s linear infinite;
+  }
+
+  .empty-frame__diamond {
+    animation: diamond-float 5s ease-in-out infinite;
+  }
+
+  .empty-frame__diamond path {
+    animation: diamond-breathe 5s ease-in-out infinite;
+  }
+
+  .empty-frame__spark {
+    animation: twinkle 3.6s ease-in-out infinite;
+  }
+
+  .empty-frame__spark--2 { animation-delay: 1.2s; }
+  .empty-frame__spark--3 { animation-delay: 2.4s; }
+
+  .gallery__item.reveal {
+    transition-delay: var(--d, 0ms);
+  }
+
+  .reveal.is-in .gallery__frame::after {
+    animation: frame-sheen 1.6s cubic-bezier(0.22, 1, 0.36, 1)
+      calc(var(--d, 0ms) + 300ms) both;
+  }
+}
+
+@keyframes dash-march {
+  to { stroke-dashoffset: -32; }
+}
+
+@keyframes diamond-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes diamond-breathe {
+  0%, 100% { fill-opacity: 0; }
+  50% { fill-opacity: 0.85; }
+}
+
+@keyframes frame-sheen {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field__box::after,
+  .field__label,
+  .chip__face,
+  .chip__face::before,
+  .chip__mark,
+  .form-step__line,
+  .contact-form__arrow,
+  .contact-card__value {
+    transition: none;
+  }
+}
