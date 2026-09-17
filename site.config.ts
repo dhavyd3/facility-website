@@ -1,24 +1,26 @@
 /**
  * Every real-world fact about the business lives here, in one place.
  *
- * The brief (facility.docx) supplied the name, motto, mission and values but
- * no country, city, phone, email or legal entity. Those are marked TODO and
- * are the only edits needed before launch.
+ * Contact details come from the client's brochure (FACILITY - Brochure FR).
+ * Anything still marked TODO is withheld by the components that print it, so
+ * a placeholder can never reach a visitor.
  */
 export const site = {
   name: "Facility services",
   shortName: "F.S",
   motto: "Make your life easy.",
 
-  /** TODO — confirm with the client. Drives phone format, hreflang, JSON-LD. */
-  country: "TODO_COUNTRY",
-  countryCode: "TODO_CC", // ISO 3166-1 alpha-2, e.g. "RW", "FR", "CA"
-  city: "TODO_CITY",
-  addressLine: "TODO_ADDRESS",
+  country: "Burundi",
+  countryCode: "BI", // ISO 3166-1 alpha-2
+  city: "Bujumbura",
+  addressLine: "Kinindo, Av. Remera n°4",
 
-  /** TODO — confirm with the client. */
-  phone: "TODO_PHONE",
-  email: "TODO_EMAIL",
+  phone: "+257 69 52 50 07",
+  email: "dusekathia@gmail.com",
+
+  founder: {
+    name: "DUSENGE KATHIA DASLIM",
+  },
 
   social: {
     instagram: "", // TODO
@@ -39,8 +41,6 @@ export type Locale = (typeof locales)[number];
 
 /** Facts that still need the client before the site can go live. */
 export const OPEN_ITEMS = [
-  "Country, city and street address",
-  "Phone number and public email",
   "Social handles",
   "Registered legal name for the footer",
   "Vector (SVG) logo — the supplied PNGs are 500x500 and will look soft",

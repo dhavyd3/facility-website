@@ -37,7 +37,7 @@ export default async function HomePage({
         facts={facts}
         actions={
           <>
-            <ButtonLink href="/devis" variant="solid">
+            <ButtonLink href="/contact" variant="solid">
               {t("cta")}
             </ButtonLink>
             <ButtonLink href="/services" variant="quiet">

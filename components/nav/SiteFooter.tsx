@@ -71,7 +71,7 @@ export async function SiteFooter() {
             </li>
             <li>
               <Link
-                href="/devis"
+                href="/contact"
                 className="text-sm text-champagne/85 transition-colors hover:text-gold-on-dark"
               >
                 {nav("quote")}

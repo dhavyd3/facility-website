@@ -92,7 +92,7 @@ export function MobileNav({
                 ))}
             </ul>
 
-            <ButtonLink href="/devis" variant="solid" className="w-full">
+            <ButtonLink href="/contact" variant="solid" className="w-full">
               {t("quote")}
             </ButtonLink>
           </nav>

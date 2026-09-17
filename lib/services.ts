@@ -30,7 +30,7 @@ export const services: readonly Service[] = [
     slug: "evenements",
     index: "01",
     flow: "enquiry",
-    action: "/devis?service=events",
+    action: "/contact?service=events",
   },
   {
     id: "coaching",
@@ -51,7 +51,7 @@ export const services: readonly Service[] = [
     slug: "gestion-locative",
     index: "04",
     flow: "enquiry",
-    action: "/devis?service=property",
+    action: "/contact?service=property",
   },
   {
     id: "sourcing",

@@ -53,7 +53,7 @@ export async function SiteHeader() {
 
         <div className="hidden items-center gap-6 xl:flex">
           <LanguageSwitcher />
-          <ButtonLink href="/devis" variant="outline" className="whitespace-nowrap">
+          <ButtonLink href="/contact" variant="outline" className="whitespace-nowrap">
             {t("quote")}
           </ButtonLink>
         </div>
