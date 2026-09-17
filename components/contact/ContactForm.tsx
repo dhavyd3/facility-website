@@ -10,7 +10,7 @@ import {
   type KeyboardEvent,
   type ReactNode,
 } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { sendEnquiry } from "@/app/[locale]/contact/actions";
 import {
@@ -82,6 +82,7 @@ function EnquiryForm({
   const t = useTranslations("contact");
   const f = useTranslations("forms");
   const s = useTranslations("services");
+  const locale = useLocale();
   const [state, formAction, pending] = useActionState(sendEnquiry, INITIAL);
 
   // Controlled on purpose: React resets uncontrolled fields after a form
@@ -271,6 +272,9 @@ function EnquiryForm({
           }
         />
       </Step>
+
+      {/* Tells the notification which side of the site the visitor used. */}
+      <input type="hidden" name="locale" value={locale} />
 
       {/* Honeypot: off-screen and out of the tab order, so only bots fill it. */}
       <div className="contact-form__trap" aria-hidden="true">
