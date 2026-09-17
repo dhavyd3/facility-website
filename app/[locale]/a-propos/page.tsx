@@ -1,6 +1,5 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { site } from "@/site.config";
@@ -9,6 +8,7 @@ import { ArrowLink, ButtonLink } from "@/components/ui/Button";
 import { Meta } from "@/components/ui/Meta";
 import { Hero } from "@/components/editorial/Hero";
 import { Section } from "@/components/editorial/Section";
+import { Photo } from "@/components/editorial/Photo";
 import { richTags } from "@/components/editorial/RichText";
 
 /**
@@ -187,11 +187,11 @@ export default async function AboutPage({
                 {pole.items.map((item, i) => (
                   <li
                     key={item}
-                    className="pole__item"
+                    className="spec-item"
                     style={{ "--i": i } as CSSProperties}
                   >
                     <svg
-                      className="pole__diamond"
+                      className="spec-diamond"
                       width={12}
                       height={12}
                       aria-hidden="true"
@@ -303,33 +303,5 @@ export default async function AboutPage({
         </div>
       </section>
     </>
-  );
-}
-
-/** A 3:4 print with a hairline mat laid over it. */
-function Photo({
-  src,
-  alt,
-  priority = false,
-  curtain = false,
-}: {
-  src: string;
-  alt: string;
-  priority?: boolean;
-  curtain?: boolean;
-}) {
-  return (
-    <div className={curtain ? "about-photo about-photo--curtain" : "about-photo"}>
-      <div className="about-photo__img">
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          priority={priority}
-          sizes="(min-width: 1024px) 45vw, 100vw"
-        />
-      </div>
-      <span className="about-photo__mat" aria-hidden="true" />
-    </div>
   );
 }

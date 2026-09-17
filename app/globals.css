@@ -1415,24 +1415,24 @@ a.contact-card__value:focus-visible {
    on that class, never a hidden resting state, so without JS or under
    reduced motion every photo, rule and marker is simply there.
    ------------------------------------------------------------------ */
-.about-photo {
+.photo {
   position: relative;
   overflow: hidden;
   aspect-ratio: 3 / 4;
   background-color: var(--color-champagne);
 }
 
-.about-photo__img {
+.photo__img {
   position: absolute;
   inset: 0;
 }
 
-.about-photo__img img {
+.photo__img img {
   object-fit: cover;
 }
 
 /* A hairline mat laid over the print, like the catalogue frames. */
-.about-photo__mat {
+.photo__mat {
   position: absolute;
   inset: 14px;
   border: 1px solid rgba(250, 247, 241, 0.55);
@@ -1512,7 +1512,7 @@ a.contact-card__value:focus-visible {
   color: var(--color-muted-on-dark);
 }
 
-.pole__item {
+.spec-item {
   display: flex;
   align-items: baseline;
   gap: 0.9rem;
@@ -1521,22 +1521,22 @@ a.contact-card__value:focus-visible {
   font-size: 1.0625rem;
 }
 
-.on-dark .pole__item {
+.on-dark .spec-item {
   border-block-start-color: rgba(176, 141, 74, 0.3);
 }
 
-.pole__diamond {
+.spec-diamond {
   flex: none;
   overflow: visible;
 }
 
-.pole__diamond path {
+.spec-diamond path {
   fill: var(--gold-rule);
   stroke: var(--gold-rule);
   stroke-width: 1.2;
 }
 
-.on-dark .pole__diamond path {
+.on-dark .spec-diamond path {
   fill: var(--color-gold-on-dark);
   stroke: var(--color-gold-on-dark);
 }
@@ -1653,11 +1653,11 @@ a.contact-card__value:focus-visible {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .reveal.is-in .about-photo__img {
+  .reveal.is-in .photo__img {
     animation: photo-settle 2.2s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
-  .reveal.is-in .about-photo--curtain {
+  .reveal.is-in .photo--curtain {
     animation: photo-curtain 1.3s cubic-bezier(0.77, 0, 0.18, 1) both;
   }
 
@@ -1671,7 +1671,7 @@ a.contact-card__value:focus-visible {
       calc(var(--d, 0ms) + 200ms) both;
   }
 
-  .reveal.is-in .pole__diamond path {
+  .reveal.is-in .spec-diamond path {
     animation: diamond-fill 0.6s ease calc(var(--i, 0) * 140ms + 450ms) both;
   }
 
@@ -1709,4 +1709,332 @@ a.contact-card__value:focus-visible {
   .btn-arrow {
     transition: none;
   }
+}
+
+/* ----------------------------- Services ----------------------------
+   The showcase (components/services/ServiceShowcase.tsx).
+
+   The phone layout is the base: a stack of panels on champagne, each with a
+   header row, and the open one showing its picture and copy. From 1024px up
+   the panels become a row, the copy sits over the picture, and the type turns
+   light because the ground under it is now a photograph.
+
+   Widths are shares of the row worked out in CSS, so nothing is measured:
+   four closed strips and their gaps come off the top and the open panel takes
+   what is left. Every picture is drawn at the OPEN width and centred, so a
+   panel that narrows crops from the middle at one constant scale instead of
+   rescaling its image on every frame.
+   ------------------------------------------------------------------ */
+.svc-row {
+  --svc-closed: clamp(68px, 6vw, 96px);
+  --svc-gap: 10px;
+  /* The open panel's width, in a length every panel can reuse. It has to be
+     cqi, not a percentage: a percentage inside a panel resolves against that
+     panel, so the picture came out the width of the leftovers instead of the
+     width of the open card. cqi measures this row from inside its children,
+     and the four strips plus their gaps add back to exactly 100cqi. */
+  --svc-open: calc(100cqi - 4 * (var(--svc-closed) + var(--svc-gap)));
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: var(--svc-gap);
+}
+
+.svc-panel {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-champagne);
+}
+
+.svc-panel__figure {
+  position: relative;
+  display: none;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+.svc-panel[data-open] .svc-panel__figure {
+  display: block;
+}
+
+.svc-panel__figure img {
+  object-fit: cover;
+}
+
+/* Both are desktop furniture: the gradient that makes type legible over a
+   photograph, and the hairline mat inside the open panel's edge. */
+.svc-panel__veil,
+.svc-panel__mat {
+  display: none;
+}
+
+.svc-panel__trigger {
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  width: 100%;
+  padding: 1.15rem clamp(1.25rem, 4vw, 2rem);
+  border: 0;
+  background: none;
+  color: var(--color-espresso);
+  cursor: pointer;
+  text-align: start;
+}
+
+.svc-panel__stem {
+  font-size: 1.3rem;
+  line-height: 1.15;
+}
+
+.svc-panel__face {
+  padding: 0 clamp(1.25rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2rem);
+}
+
+.svc-panel:not([data-open]) .svc-panel__face {
+  display: none;
+}
+
+/* The header row already carries the number and the name on a phone. */
+.svc-panel__face > .meta,
+.svc-panel__name {
+  display: none;
+}
+
+.svc-panel__short {
+  color: var(--color-muted);
+}
+
+.svc-panel__objective {
+  margin-top: 0.85rem;
+  font-size: 1.0625rem;
+}
+
+.svc-panel__link {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .svc-row {
+    flex-direction: row;
+    height: clamp(420px, 56vh, 620px);
+  }
+
+  .svc-panel {
+    flex: 0 0 var(--svc-closed);
+    background: var(--color-espresso);
+  }
+
+  .svc-panel[data-open] {
+    flex-basis: var(--svc-open);
+  }
+
+  .svc-panel__figure {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    display: block;
+    width: var(--svc-open);
+    aspect-ratio: auto;
+    transform: translateX(-50%);
+    filter: brightness(0.5) saturate(0.85);
+  }
+
+  .svc-panel:hover .svc-panel__figure {
+    filter: brightness(0.62) saturate(0.9);
+  }
+
+  .svc-panel[data-open] .svc-panel__figure,
+  .svc-panel[data-open]:hover .svc-panel__figure {
+    filter: none;
+  }
+
+  .svc-panel__veil {
+    position: absolute;
+    inset: 0;
+    display: block;
+    background: linear-gradient(
+      to top,
+      rgba(26, 21, 14, 0.9) 0%,
+      rgba(26, 21, 14, 0.55) 38%,
+      rgba(26, 21, 14, 0.12) 70%,
+      transparent 100%
+    );
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .svc-panel__mat {
+    position: absolute;
+    inset: 14px;
+    display: block;
+    border: 1px solid rgba(250, 247, 241, 0.4);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .svc-panel[data-open] .svc-panel__veil,
+  .svc-panel[data-open] .svc-panel__mat {
+    opacity: 1;
+  }
+
+  .svc-panel__trigger {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    padding: 1.6rem 0;
+    color: var(--color-cream);
+  }
+
+  .svc-panel__stem {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    font-size: clamp(1.05rem, 1.4vw, 1.4rem);
+  }
+
+  /* The open panel's copy carries its own number and name, so the strip
+     furniture fades out — but the trigger stays focusable for the keyboard. */
+  .svc-panel[data-open] .svc-panel__trigger {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .svc-panel:not([data-open]) .svc-panel__face {
+    display: flex;
+  }
+
+  .svc-panel__face {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 100%;
+    padding: clamp(1.75rem, 2.6vw, 2.75rem);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .svc-panel[data-open] .svc-panel__face {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .svc-panel__face > .meta,
+  .svc-panel__name {
+    display: block;
+  }
+
+  .svc-panel__name {
+    margin-top: 0.8rem;
+    color: var(--color-cream);
+    font-size: clamp(1.9rem, 2.8vw, 2.6rem);
+  }
+
+  .svc-panel__short {
+    margin-top: 0.7rem;
+    color: var(--color-champagne);
+  }
+
+  .svc-panel__objective {
+    max-width: 46ch;
+    color: var(--color-champagne);
+    font-size: 1.125rem;
+  }
+
+  .svc-panel__link {
+    margin-top: 1.75rem;
+  }
+
+  /* The ground under the copy is a photograph here, so the arrow link takes
+     its on-dark steps: gold-on-dark at rest, champagne on hover. These are
+     unlayered, which is what lets them beat the Tailwind utilities on the
+     arrow itself. */
+  .svc-panel__face .meta[data-tone="accent"],
+  .svc-panel__face .link-underline,
+  .svc-panel__face [aria-hidden="true"] {
+    color: var(--color-gold-on-dark);
+  }
+
+  .svc-panel__face .group:hover .link-underline,
+  .svc-panel__face .group:focus-visible .link-underline,
+  .svc-panel__face .group:hover [aria-hidden="true"] {
+    color: var(--color-champagne);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .svc-panel {
+    transition: flex-basis 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .svc-panel__figure {
+    transition: filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .svc-panel__veil,
+  .svc-panel__mat,
+  .svc-panel__trigger {
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .svc-panel__face {
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.18s,
+      visibility 0.5s;
+  }
+}
+
+/* ------------------------- Service detail pages ------------------- */
+.photo--wide {
+  aspect-ratio: 4 / 3;
+}
+
+.spec-list,
+.type-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0 3rem;
+}
+
+.type-list {
+  margin-top: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .spec-list,
+  .type-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.type-line {
+  padding-block: 1.25rem;
+  border-block-start: 1px solid var(--gold-rule-hair);
+}
+
+.type-line .display {
+  font-size: clamp(1.25rem, 1.9vw, 1.6rem);
+}
+
+/* On espresso, brand gold reaches only 3.60:1, so the outline button and the
+   step numerals move to the gold-on-dark step. */
+.on-dark .btn-outline {
+  color: var(--color-gold-on-dark);
+  border-color: var(--color-gold-on-dark);
+  --btn-fill: var(--color-gold-on-dark);
+}
+
+.on-dark .btn-outline:hover,
+.on-dark .btn-outline:focus-visible {
+  color: var(--color-ink); /* ink on gold-on-dark 9.24:1 */
+}
+
+.on-dark .objective__no {
+  color: var(--color-gold-on-dark);
 }

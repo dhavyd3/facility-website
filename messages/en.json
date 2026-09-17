@@ -54,6 +54,16 @@
     "objectiveLabel": "Our objective",
     "audienceLabel": "Who it's for",
     "learnMore": "Learn more",
+    "showcaseLabel": "Our five services",
+    "includesLabel": "What the service includes",
+    "processLabel": "How it works",
+    "noteLabel": "Worth knowing",
+    "othersLabel": "The other services",
+    "closing": {
+      "title": "Five services. <em>One point of contact.</em>",
+      "body": "A lighter life, starting with one conversation. Tell us what's weighing on you and we'll take it from there.",
+      "cta": "Request a quote"
+    },
     "events": {
       "name": "Event planning",
       "short": "Family events and beyond",
@@ -61,16 +71,108 @@
       "audience": "Families, individuals, companies",
       "title": "Your event, <em>without the load</em>.",
       "body": "From birthdays to large family gatherings, we take on the design, the suppliers, the schedule and the day itself. You stay the host; we carry everything else.",
-      "cta": "Talk about your event"
+      "cta": "Talk about your event",
+      "detail": {
+        "photoAlt": "Two decorators setting up a wedding reception: ivory drapery and a floral centrepiece.",
+        "facts": {
+          "quote": { "label": "Quote", "value": "Within 48 h" },
+          "day": { "label": "The day itself", "value": "Coordination included" },
+          "audience": { "label": "For", "value": "Families and companies" }
+        },
+        "typesLabel": "The events we organise",
+        "types": {
+          "1": "Weddings and religious ceremonies",
+          "2": "Dowry and traditional ceremonies",
+          "3": "Graduation celebrations",
+          "4": "Birthdays and christenings",
+          "5": "Family gatherings and reunions",
+          "6": "Retirement parties and tributes",
+          "7": "Corporate receptions and seminars"
+        },
+        "includes": {
+          "1": "The design of the event: theme, colour palette, floor plan",
+          "2": "Finding and booking the venue, including the visit",
+          "3": "Full decoration: drapery, flowers, lighting, table settings",
+          "4": "Renting or buying the equipment: chairs, marquees, tableware, sound",
+          "5": "Choosing and coordinating suppliers: caterer, baker, photographer, music",
+          "6": "Waiting staff and hosts on the day, on request",
+          "7": "A preparation schedule and budget tracking",
+          "8": "Coordination on the day, then teardown and handing the venue back"
+        },
+        "process": {
+          "1": {
+            "title": "We listen",
+            "body": "A first conversation to understand the occasion, the number of guests, your wishes and your budget."
+          },
+          "2": {
+            "title": "We propose",
+            "body": "A concept, a venue, a decoration plan and a detailed quote, within 48 hours."
+          },
+          "3": {
+            "title": "We prepare",
+            "body": "Suppliers, equipment, schedule: everything booked, checked and confirmed before the date."
+          },
+          "4": {
+            "title": "You host",
+            "body": "On the day our team sets up, coordinates and takes down. You stay the host, nothing more."
+          }
+        },
+        "note": "Already have a venue or a caterer? We fit around them and take on only what you are missing."
+      }
     },
     "coaching": {
       "name": "Teen coaching",
-      "short": "Guidance through the teenage years",
+      "short": "Coaching, retreats and camps",
       "objective": "Help your teenager through the adolescent crisis and build a better future.",
       "audience": "Parents and teenagers",
       "title": "Through adolescence, <em>and stronger for it</em>.",
       "body": "Patient, structured, confidential support: confidence, direction, family relationships, study method. We work with the teenager, and with the parents.",
-      "cta": "Book a first session"
+      "cta": "Book a first session",
+      "detail": {
+        "photoAlt": "A bright room set up for a teenagers' group: a circle of chairs, notebooks and a flip chart.",
+        "facts": {
+          "format": { "label": "Format", "value": "One-to-one or group" },
+          "frame": { "label": "Setting", "value": "Strictly confidential" },
+          "audience": { "label": "For", "value": "Parents and teenagers" }
+        },
+        "typesLabel": "What we work on",
+        "types": {
+          "1": "Confidence and self-esteem",
+          "2": "School choices and plans for the future",
+          "3": "Study method and organisation",
+          "4": "Family relationships and talking at home",
+          "5": "Handling emotions, stress and conflict",
+          "6": "Social life, peer pressure and screen time"
+        },
+        "includes": {
+          "1": "A first conversation to set the frame, with the parents and the teenager",
+          "2": "Regular one-to-one sessions, in full confidence",
+          "3": "Sessions with the parents, so everyone pulls the same way",
+          "4": "Retreats and camps during the holidays",
+          "5": "Wellbeing spaces: somewhere to meet, learn and socialise while having fun",
+          "6": "Group workshops: speaking up, managing time, a personal project",
+          "7": "A progress review with the parents at the end of each cycle"
+        },
+        "process": {
+          "1": {
+            "title": "First contact",
+            "body": "You tell us what worries you. We agree on a first conversation, with no commitment."
+          },
+          "2": {
+            "title": "We set the frame",
+            "body": "Goals, how often you meet and the rules of confidentiality, agreed by the teenager and the parents alike."
+          },
+          "3": {
+            "title": "We walk alongside",
+            "body": "Regular sessions, concrete exercises between them, and camps if they want to go."
+          },
+          "4": {
+            "title": "We take stock",
+            "body": "At the end of each cycle, a review with the family: what has moved, what is still to build."
+          }
+        },
+        "note": "What a teenager tells us stays confidential. We share progress with parents, never confidences."
+      }
     },
     "home": {
       "name": "Housekeeping and decoration",
@@ -79,7 +181,53 @@
       "audience": "Homes and offices",
       "title": "A clean home, <em>a quiet mind</em>.",
       "body": "A regular visit, a consistent team, a standard that doesn't move. And if you'd like it, a decorator's eye — so the space isn't only clean, but beautiful.",
-      "cta": "Schedule a visit"
+      "cta": "Schedule a visit",
+      "detail": {
+        "photoAlt": "A housekeeper finishing a decorated living room: aligned cushions, cream throw, fresh eucalyptus.",
+        "facts": {
+          "rhythm": { "label": "Rhythm", "value": "One-off or regular" },
+          "team": { "label": "Team", "value": "Consistent and trained" },
+          "audience": { "label": "For", "value": "Homes and offices" }
+        },
+        "typesLabel": "What a visit covers",
+        "types": {
+          "1": "Living room, dining room and offices",
+          "2": "Bedrooms, including fresh bed linen",
+          "3": "Kitchen: worktops, appliances, floors",
+          "4": "Bathrooms and toilets, disinfection included",
+          "5": "Floors, interior windows and high dusting",
+          "6": "Tidying, ironing and taking out the bins"
+        },
+        "includes": {
+          "1": "A free first visit to assess the space and agree the detail",
+          "2": "A consistent, trained team, introduced to you: the same faces every visit",
+          "3": "Products and equipment provided, suited to your surfaces",
+          "4": "A rhythm you choose: once, weekly, fortnightly or monthly",
+          "5": "Putting a space back in order after works, a move or a reception",
+          "6": "A checklist verified at every visit, so the standard doesn't move",
+          "7": "A decorator's eye as an option: colours, furniture and accessories",
+          "8": "Making a space beautiful before an event or before guests arrive"
+        },
+        "process": {
+          "1": {
+            "title": "We come and look",
+            "body": "A visit to measure the space, understand your standards and agree the rhythm."
+          },
+          "2": {
+            "title": "We propose",
+            "body": "A clear quote: what is done, how often, by how many people and for how much."
+          },
+          "3": {
+            "title": "We take over",
+            "body": "The same team, on the agreed days, with a checklist verified at every visit."
+          },
+          "4": {
+            "title": "We adjust",
+            "body": "A review after the first month, then whenever you ask. The standard fits your home."
+          }
+        },
+        "note": "Decoration can come on its own: advice, selection and installation, with no cleaning contract."
+      }
     },
     "property": {
       "name": "Property management",
@@ -88,7 +236,52 @@
       "audience": "Absent or busy owners",
       "title": "Your property, <em>in good hands</em>.",
       "body": "For owners far from their property, or simply too busy: welcoming tenants, upkeep, small repairs, rent tracking and a regular report. You collect; we keep watch.",
-      "cta": "Entrust a property"
+      "cta": "Entrust a property",
+      "detail": {
+        "photoAlt": "A property manager handing the keys of a bright furnished apartment to a young couple.",
+        "facts": {
+          "report": { "label": "Report", "value": "Every month" },
+          "scope": { "label": "Property", "value": "Airbnb and long-term" },
+          "audience": { "label": "For", "value": "Absent owners" }
+        },
+        "typesLabel": "What we look after",
+        "types": {
+          "1": "Apartments and houses on long-term lets",
+          "2": "Furnished short stays and Airbnb",
+          "3": "Property owned from abroad",
+          "4": "Shops and offices",
+          "5": "Empty property to watch over and maintain"
+        },
+        "includes": {
+          "1": "Presenting the property: photos, listing and publication",
+          "2": "Finding and vetting tenants, guarantees checked",
+          "3": "Inventories on arrival and departure, with photographs",
+          "4": "Welcoming tenants and handing over the keys",
+          "5": "Rent tracking and reminders, then payment into your account",
+          "6": "Everyday upkeep and small repairs, quoted before any spending",
+          "7": "Short-stay turnover: cleaning, linen and welcome between guests",
+          "8": "A monthly report: money in, money out, anything that happened"
+        },
+        "process": {
+          "1": {
+            "title": "We visit the property",
+            "body": "We assess its condition, what it can earn and how much watching it needs."
+          },
+          "2": {
+            "title": "We agree the mandate",
+            "body": "Services chosen, a spending ceiling and our fees: all in writing before we start."
+          },
+          "3": {
+            "title": "We manage",
+            "body": "Tenants, rent, upkeep, emergencies: you have one number to call, ours."
+          },
+          "4": {
+            "title": "You collect",
+            "body": "Every month, your rent and a clear report, with no unexpected spending."
+          }
+        },
+        "note": "Above the agreed ceiling, no repair goes ahead without your written approval."
+      }
     },
     "sourcing": {
       "name": "Purchase facilitation",
@@ -97,7 +290,54 @@
       "audience": "Individuals and companies",
       "title": "What you need, <em>found and delivered</em>.",
       "body": "Online or in local markets, we search, compare, negotiate and deliver. Tell us what you're looking for and we'll come back with a clear proposal.",
-      "cta": "Make a request"
+      "cta": "Make a request",
+      "detail": {
+        "photoAlt": "A buyer comparing fabric at the market, list in hand and baskets filled.",
+        "facts": {
+          "quote": { "label": "Proposal", "value": "Within 48 h" },
+          "scope": { "label": "Sourcing", "value": "Online and local" },
+          "audience": { "label": "For", "value": "Individuals and companies" }
+        },
+        "typesLabel": "What we find for you",
+        "types": {
+          "1": "Furniture, decoration and appliances",
+          "2": "Fabric, pagne and haberdashery",
+          "3": "Computers and phones",
+          "4": "Office supplies and consumables",
+          "5": "Fresh produce and everyday shopping",
+          "6": "Materials and tools for your works",
+          "7": "Gifts, flowers and hampers"
+        },
+        "includes": {
+          "1": "A search online and in local markets, from your list",
+          "2": "An honest comparison: price, quality, delay, and our reservations if we have any",
+          "3": "Negotiating with the sellers, in your place",
+          "4": "Checking every item before it is paid for",
+          "5": "Transport and delivery to your door, at the agreed time",
+          "6": "Installation or assembly, on request",
+          "7": "Recurring purchases on a fixed date, for companies",
+          "8": "The receipts for everything, handed over with the order"
+        },
+        "process": {
+          "1": {
+            "title": "You tell us",
+            "body": "Your list, your preferences and your budget. A photo or a link is often enough."
+          },
+          "2": {
+            "title": "We search",
+            "body": "Online and on the ground. We come back within 48 hours with costed options."
+          },
+          "3": {
+            "title": "You choose",
+            "body": "You approve an option. We buy, check and gather the order together."
+          },
+          "4": {
+            "title": "We deliver",
+            "body": "Delivered to your door with the receipts, and installed if you'd like."
+          }
+        },
+        "note": "No hidden commission on your purchases: our fee is stated in the quote."
+      }
     }
   },
   "about": {

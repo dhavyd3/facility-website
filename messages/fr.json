@@ -54,6 +54,16 @@
     "objectiveLabel": "Notre objectif",
     "audienceLabel": "Pour qui",
     "learnMore": "En savoir plus",
+    "showcaseLabel": "Nos cinq services",
+    "includesLabel": "Ce que comprend le service",
+    "processLabel": "Comment ça se passe",
+    "noteLabel": "Bon à savoir",
+    "othersLabel": "Les autres services",
+    "closing": {
+      "title": "Cinq services. <em>Un seul interlocuteur.</em>",
+      "body": "Une vie plus légère, à partir d'un seul échange. Dites-nous ce qui vous pèse et nous nous en occupons.",
+      "cta": "Demander un devis"
+    },
     "events": {
       "name": "Organisation d'événements",
       "short": "Événements familiaux et autres",
@@ -61,16 +71,108 @@
       "audience": "Familles, particuliers, entreprises",
       "title": "Votre événement, <em>sans la charge</em>.",
       "body": "Des anniversaires aux grandes réunions de famille, nous prenons en main la conception, les prestataires, le calendrier et le jour J. Vous restez l'hôte ; nous portons tout le reste.",
-      "cta": "Parler de votre événement"
+      "cta": "Parler de votre événement",
+      "detail": {
+        "photoAlt": "Deux décoratrices installent une réception de mariage : drapé ivoire et centre de table fleuri.",
+        "facts": {
+          "quote": { "label": "Devis", "value": "Sous 48 h" },
+          "day": { "label": "Jour J", "value": "Coordination incluse" },
+          "audience": { "label": "Pour", "value": "Familles et entreprises" }
+        },
+        "typesLabel": "Les événements que nous organisons",
+        "types": {
+          "1": "Mariages et cérémonies religieuses",
+          "2": "Dots et cérémonies traditionnelles",
+          "3": "Fêtes de remise de diplôme",
+          "4": "Anniversaires et baptêmes",
+          "5": "Réunions et retrouvailles de famille",
+          "6": "Départs à la retraite et hommages",
+          "7": "Réceptions et séminaires d'entreprise"
+        },
+        "includes": {
+          "1": "Conception de l'événement : thème, palette de couleurs, plan de salle",
+          "2": "Recherche et réservation du lieu, visite comprise",
+          "3": "Décoration complète : drapés, fleurs, éclairage, dressage des tables",
+          "4": "Location ou achat du matériel : chaises, tentes, vaisselle, sonorisation",
+          "5": "Sélection et coordination des prestataires : traiteur, pâtissier, photographe, musique",
+          "6": "Personnel de service le jour J : serveurs et hôtesses d'accueil, sur demande",
+          "7": "Calendrier de préparation et suivi du budget",
+          "8": "Coordination du jour J, puis démontage et remise en état du lieu"
+        },
+        "process": {
+          "1": {
+            "title": "Nous vous écoutons",
+            "body": "Un premier échange pour comprendre l'occasion, le nombre d'invités, vos envies et votre budget."
+          },
+          "2": {
+            "title": "Nous proposons",
+            "body": "Un concept, un lieu, un plan de décoration et un devis détaillé, sous 48 heures."
+          },
+          "3": {
+            "title": "Nous préparons",
+            "body": "Prestataires, matériel, calendrier : tout est réservé, vérifié et confirmé avant la date."
+          },
+          "4": {
+            "title": "Vous recevez",
+            "body": "Le jour J, notre équipe installe, coordonne et démonte. Vous restez l'hôte, rien d'autre."
+          }
+        },
+        "note": "Vous avez déjà un lieu ou un traiteur ? Nous nous adaptons et ne prenons en charge que ce qui vous manque."
+      }
     },
     "coaching": {
       "name": "Coaching d'adolescents",
-      "short": "Accompagnement des adolescents",
+      "short": "Accompagnement, retraites et camps",
       "objective": "Aider votre adolescent à surmonter la crise d'adolescence et à bâtir un meilleur avenir.",
       "audience": "Parents et adolescents",
       "title": "Traverser l'adolescence, <em>et en sortir plus fort</em>.",
       "body": "Un accompagnement patient, structuré et confidentiel : confiance en soi, orientation, relations familiales, méthode de travail. Nous travaillons avec l'adolescent, et avec les parents.",
-      "cta": "Réserver un premier entretien"
+      "cta": "Réserver un premier entretien",
+      "detail": {
+        "photoAlt": "Une salle claire préparée pour un groupe d'adolescents : cercle de chaises, carnets et paperboard.",
+        "facts": {
+          "format": { "label": "Format", "value": "Individuel ou en groupe" },
+          "frame": { "label": "Cadre", "value": "Strictement confidentiel" },
+          "audience": { "label": "Pour", "value": "Parents et adolescents" }
+        },
+        "typesLabel": "Ce sur quoi nous travaillons",
+        "types": {
+          "1": "Confiance en soi et estime de soi",
+          "2": "Orientation scolaire et projet d'avenir",
+          "3": "Méthode de travail et organisation",
+          "4": "Relations familiales et communication à la maison",
+          "5": "Gestion des émotions, du stress et des conflits",
+          "6": "Vie sociale, pression des pairs et usage des écrans"
+        },
+        "includes": {
+          "1": "Un premier entretien pour poser le cadre, avec les parents et l'adolescent",
+          "2": "Des séances individuelles régulières, en toute confidentialité",
+          "3": "Des séances avec les parents, pour avancer dans le même sens",
+          "4": "Des retraites et des camps de ressourcement pendant les vacances",
+          "5": "Des espaces bien-être : un cadre de rencontre pour apprendre et socialiser en s'amusant",
+          "6": "Des ateliers de groupe : prise de parole, gestion du temps, projet personnel",
+          "7": "Un point d'étape avec les parents à la fin de chaque cycle"
+        },
+        "process": {
+          "1": {
+            "title": "Premier contact",
+            "body": "Vous nous dites ce qui vous inquiète. Nous convenons d'un premier entretien, sans engagement."
+          },
+          "2": {
+            "title": "Nous posons le cadre",
+            "body": "Objectifs, rythme des séances et règles de confidentialité, acceptés par l'adolescent comme par les parents."
+          },
+          "3": {
+            "title": "Nous accompagnons",
+            "body": "Des séances régulières, des exercices concrets entre deux rendez-vous, et des camps s'il en a envie."
+          },
+          "4": {
+            "title": "Nous faisons le point",
+            "body": "À la fin de chaque cycle, un bilan avec la famille : ce qui a avancé, ce qui reste à construire."
+          }
+        },
+        "note": "Ce que l'adolescent nous confie reste confidentiel. Nous partageons avec les parents les avancées, jamais les confidences."
+      }
     },
     "home": {
       "name": "Ménage et décoration",
@@ -79,7 +181,53 @@
       "audience": "Maisons et bureaux",
       "title": "Une maison nette, <em>un esprit tranquille</em>.",
       "body": "Un passage régulier, une équipe constante, un standard qui ne bouge pas. Et si vous le souhaitez, un regard de décoration pour que l'espace ne soit pas seulement propre, mais beau.",
-      "cta": "Planifier un passage"
+      "cta": "Planifier un passage",
+      "detail": {
+        "photoAlt": "Une femme de ménage termine un salon décoré : coussins alignés, plaid crème, eucalyptus frais.",
+        "facts": {
+          "rhythm": { "label": "Rythme", "value": "Ponctuel ou régulier" },
+          "team": { "label": "Équipe", "value": "Constante et formée" },
+          "audience": { "label": "Pour", "value": "Maisons et bureaux" }
+        },
+        "typesLabel": "Ce que couvre un passage",
+        "types": {
+          "1": "Séjour, salle à manger et bureaux",
+          "2": "Chambres et changement du linge de lit",
+          "3": "Cuisine : plans de travail, électroménager, sols",
+          "4": "Salles de bains et sanitaires, désinfection comprise",
+          "5": "Sols, vitres intérieures et poussières en hauteur",
+          "6": "Rangement, repassage et sortie des déchets"
+        },
+        "includes": {
+          "1": "Un premier passage d'évaluation, gratuit, pour convenir du détail",
+          "2": "Une équipe constante, formée et présentée : les mêmes visages à chaque passage",
+          "3": "Produits et matériel fournis, adaptés à vos surfaces",
+          "4": "Un rythme au choix : une fois, chaque semaine, toutes les deux semaines ou chaque mois",
+          "5": "Une remise en état après travaux, déménagement ou réception",
+          "6": "Une check-list vérifiée à chaque passage, pour que le standard ne bouge pas",
+          "7": "Un regard de décoration en option : couleurs, mobilier et accessoires",
+          "8": "Une mise en beauté avant un événement ou l'arrivée d'invités"
+        },
+        "process": {
+          "1": {
+            "title": "Nous venons voir",
+            "body": "Une visite pour mesurer les surfaces, comprendre vos exigences et convenir du rythme."
+          },
+          "2": {
+            "title": "Nous proposons",
+            "body": "Un devis clair : ce qui est fait, à quelle fréquence, par combien de personnes et pour quel montant."
+          },
+          "3": {
+            "title": "Nous prenons le relais",
+            "body": "La même équipe, aux jours convenus, avec une check-list vérifiée à chaque passage."
+          },
+          "4": {
+            "title": "Nous ajustons",
+            "body": "Un point après le premier mois, puis à votre demande. Le standard s'adapte à votre maison."
+          }
+        },
+        "note": "La décoration peut venir seule : conseil, sélection et installation, sans contrat de ménage."
+      }
     },
     "property": {
       "name": "Gestion de biens locatifs",
@@ -88,7 +236,52 @@
       "audience": "Propriétaires absents ou occupés",
       "title": "Votre bien, <em>entre de bonnes mains</em>.",
       "body": "Pour les propriétaires loin de leurs biens ou simplement trop occupés : accueil des locataires, entretien, petites réparations, suivi des loyers et compte rendu régulier. Vous recevez ; nous veillons.",
-      "cta": "Confier un bien"
+      "cta": "Confier un bien",
+      "detail": {
+        "photoAlt": "Un gestionnaire remet les clés d'un appartement meublé et lumineux à un jeune couple.",
+        "facts": {
+          "report": { "label": "Compte rendu", "value": "Chaque mois" },
+          "scope": { "label": "Biens", "value": "Airbnb et longue durée" },
+          "audience": { "label": "Pour", "value": "Propriétaires absents" }
+        },
+        "typesLabel": "Ce dont nous nous occupons",
+        "types": {
+          "1": "Appartements et maisons en location longue durée",
+          "2": "Locations meublées de courte durée et Airbnb",
+          "3": "Biens de propriétaires vivant à l'étranger",
+          "4": "Locaux commerciaux et bureaux",
+          "5": "Biens vacants à surveiller et à entretenir"
+        },
+        "includes": {
+          "1": "Mise en valeur du bien : photos, annonce et diffusion",
+          "2": "Recherche et sélection des locataires, avec vérification des garanties",
+          "3": "États des lieux d'entrée et de sortie, en photos",
+          "4": "Accueil des locataires et remise des clés",
+          "5": "Suivi des loyers et relances, puis versement sur votre compte",
+          "6": "Entretien courant et petites réparations, devis avant toute dépense",
+          "7": "Rotation des séjours courts : ménage, linge et accueil entre deux voyageurs",
+          "8": "Un compte rendu mensuel : encaissements, dépenses, incidents"
+        },
+        "process": {
+          "1": {
+            "title": "Nous visitons le bien",
+            "body": "Nous évaluons son état, son potentiel locatif et le niveau de suivi dont il a besoin."
+          },
+          "2": {
+            "title": "Nous convenons du mandat",
+            "body": "Services retenus, plafond de dépenses, honoraires : tout est écrit avant de commencer."
+          },
+          "3": {
+            "title": "Nous gérons",
+            "body": "Locataires, loyers, entretien, urgences : vous avez un seul numéro à appeler, le nôtre."
+          },
+          "4": {
+            "title": "Vous recevez",
+            "body": "Chaque mois, votre loyer et un compte rendu clair, sans dépense imprévue."
+          }
+        },
+        "note": "Au-delà du plafond convenu, aucune réparation n'est engagée sans votre accord écrit."
+      }
     },
     "sourcing": {
       "name": "Facilitation d'achat",
@@ -97,7 +290,54 @@
       "audience": "Particuliers et entreprises",
       "title": "Ce qu'il vous faut, <em>trouvé et livré</em>.",
       "body": "En ligne ou sur les marchés locaux, nous cherchons, comparons, négocions et livrons. Dites-nous ce que vous cherchez : nous revenons vers vous avec une proposition claire.",
-      "cta": "Faire une demande"
+      "cta": "Faire une demande",
+      "detail": {
+        "photoAlt": "Une acheteuse compare des tissus au marché, liste en main et paniers remplis.",
+        "facts": {
+          "quote": { "label": "Proposition", "value": "Sous 48 h" },
+          "scope": { "label": "Achats", "value": "En ligne et locaux" },
+          "audience": { "label": "Pour", "value": "Particuliers et entreprises" }
+        },
+        "typesLabel": "Ce que nous trouvons pour vous",
+        "types": {
+          "1": "Mobilier, décoration et électroménager",
+          "2": "Tissus, pagnes et articles de mercerie",
+          "3": "Matériel informatique et téléphonie",
+          "4": "Fournitures de bureau et consommables",
+          "5": "Produits frais et courses du quotidien",
+          "6": "Matériaux et outillage pour vos travaux",
+          "7": "Cadeaux, fleurs et paniers garnis"
+        },
+        "includes": {
+          "1": "Une recherche en ligne et sur les marchés locaux, à partir de votre liste",
+          "2": "Une comparaison honnête : prix, qualité, délai, et nos réserves s'il y en a",
+          "3": "La négociation auprès des vendeurs, à votre place",
+          "4": "La vérification de chaque article avant paiement",
+          "5": "Le transport et la livraison chez vous, à l'heure convenue",
+          "6": "L'installation ou le montage, sur demande",
+          "7": "Des achats récurrents à date fixe, pour les entreprises",
+          "8": "Les reçus de tous les achats, remis avec la commande"
+        },
+        "process": {
+          "1": {
+            "title": "Vous nous dites",
+            "body": "Votre liste, vos préférences et votre budget. Une photo ou un lien suffit souvent."
+          },
+          "2": {
+            "title": "Nous cherchons",
+            "body": "En ligne et sur place. Nous revenons sous 48 heures avec des options chiffrées."
+          },
+          "3": {
+            "title": "Vous choisissez",
+            "body": "Vous validez une option. Nous achetons, vérifions et rassemblons la commande."
+          },
+          "4": {
+            "title": "Nous livrons",
+            "body": "Livraison chez vous avec les reçus, et installation si vous le souhaitez."
+          }
+        },
+        "note": "Aucune commission cachée sur vos achats : nos honoraires figurent dans le devis."
+      }
     }
   },
   "about": {
