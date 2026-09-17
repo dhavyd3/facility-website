@@ -2,17 +2,14 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { routing } from "@/i18n/routing";
-import { locales, site } from "@/site.config";
+import { site } from "@/site.config";
 import { SUBJECTS } from "@/lib/contact";
+import { localeAlternates } from "@/lib/alternates";
 import { Meta } from "@/components/ui/Meta";
 import { richTags } from "@/components/editorial/RichText";
 import { Sparkle } from "@/components/editorial/Sparkle";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { CopyButton } from "@/components/contact/CopyButton";
-
-const pathFor = (locale: string) =>
-  locale === routing.defaultLocale ? "/contact" : `/${locale}/contact`;
 
 /** Same rule as the footer: a value still marked TODO is never printed. */
 const real = (value: string) =>
@@ -29,10 +26,7 @@ export async function generateMetadata({
   return {
     title: t("metaTitle"),
     description: t("intro"),
-    alternates: {
-      canonical: pathFor(locale),
-      languages: Object.fromEntries(locales.map((l) => [l, pathFor(l)])),
-    },
+    alternates: localeAlternates("/contact", locale),
   };
 }
 

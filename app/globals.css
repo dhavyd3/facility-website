@@ -1408,3 +1408,305 @@ a.contact-card__value:focus-visible {
     transition: none;
   }
 }
+
+/* ------------------------------ About ------------------------------
+   app/[locale]/a-propos. Photos, rules and markers draw in when
+   RevealObserver marks their block .is-in. The motion is an animation keyed
+   on that class, never a hidden resting state, so without JS or under
+   reduced motion every photo, rule and marker is simply there.
+   ------------------------------------------------------------------ */
+.about-photo {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background-color: var(--color-champagne);
+}
+
+.about-photo__img {
+  position: absolute;
+  inset: 0;
+}
+
+.about-photo__img img {
+  object-fit: cover;
+}
+
+/* A hairline mat laid over the print, like the catalogue frames. */
+.about-photo__mat {
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(250, 247, 241, 0.55);
+  pointer-events: none;
+}
+
+.btn-arrow {
+  display: inline-block;
+  margin-inline-start: 0.6rem;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn:hover .btn-arrow,
+.btn:focus-visible .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Objectives: a gold italic numeral, the promise, and a hairline that draws
+   across under each row. */
+.objective {
+  position: relative;
+  display: grid;
+  grid-template-columns: clamp(3.5rem, 7vw, 5.5rem) minmax(0, 1fr);
+  align-items: baseline;
+  padding-block: 1.75rem;
+}
+
+.objective::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--gold-rule-hair);
+  transform-origin: left center;
+}
+
+.objective__no {
+  color: var(--color-gold);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.4vw, 2.75rem);
+  font-style: italic;
+  line-height: 1;
+}
+
+.objective__text {
+  font-size: clamp(1.35rem, 2.1vw, 1.75rem);
+  line-height: 1.3;
+}
+
+/* Services: the two branches side by side, Events on espresso. */
+.poles {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .poles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.pole {
+  padding: clamp(1.75rem, 3.5vw, 3rem);
+}
+
+.pole--services {
+  background: var(--color-champagne);
+}
+
+.pole__tagline {
+  color: var(--color-muted);
+}
+
+.on-dark .pole__tagline {
+  color: var(--color-muted-on-dark);
+}
+
+.pole__item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding-block: 1rem;
+  border-block-start: 1px solid var(--gold-rule-hair);
+  font-size: 1.0625rem;
+}
+
+.on-dark .pole__item {
+  border-block-start-color: rgba(176, 141, 74, 0.3);
+}
+
+.pole__diamond {
+  flex: none;
+  overflow: visible;
+}
+
+.pole__diamond path {
+  fill: var(--gold-rule);
+  stroke: var(--gold-rule);
+  stroke-width: 1.2;
+}
+
+.on-dark .pole__diamond path {
+  fill: var(--color-gold-on-dark);
+  stroke: var(--color-gold-on-dark);
+}
+
+/* Who it's for: plain text joined by small diamonds, not pills (Rule 2). */
+.clients {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  row-gap: 0.35rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+}
+
+.clients li + li::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-inline: 0.85rem;
+  background: var(--gold-rule);
+  transform: translateY(-0.2em) rotate(45deg);
+}
+
+/* Values */
+.values {
+  display: grid;
+  gap: 3.5rem 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .values {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .values {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.value {
+  padding-top: 1.75rem;
+  border-block-start: 1px solid rgba(176, 141, 74, 0.3);
+}
+
+.value__name {
+  position: relative;
+  margin-top: 1.25rem;
+  padding-bottom: 1rem;
+  font-size: clamp(1.9rem, 2.3vw, 2.4rem);
+  hyphens: auto;
+}
+
+.value__name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2.75rem;
+  height: 1px;
+  background: var(--color-gold-on-dark);
+  transform-origin: left center;
+}
+
+.value__body {
+  margin-top: 1.25rem;
+}
+
+/* Founder */
+.founder__name {
+  font-size: clamp(2rem, 3.6vw, 3.25rem);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+.founder__rule {
+  display: block;
+  width: 3.5rem;
+  height: 1px;
+  margin-top: 1.75rem;
+  background: var(--gold-rule);
+  transform-origin: left center;
+}
+
+.founder__quote {
+  margin-top: 2.5rem;
+}
+
+.founder__mark {
+  display: block;
+  overflow: visible;
+}
+
+.founder__mark path {
+  fill: var(--gold-rule);
+}
+
+.founder__quote p {
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.3vw, 1.95rem);
+  font-style: italic;
+  line-height: 1.3;
+  text-wrap: pretty;
+}
+
+.founder__signature {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-style: italic;
+  line-height: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal.is-in .about-photo__img {
+    animation: photo-settle 2.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .reveal.is-in .about-photo--curtain {
+    animation: photo-curtain 1.3s cubic-bezier(0.77, 0, 0.18, 1) both;
+  }
+
+  .objective.reveal,
+  .value.reveal {
+    transition-delay: var(--d, 0ms);
+  }
+
+  .objective.is-in::after {
+    animation: rule-draw 1s cubic-bezier(0.22, 1, 0.36, 1)
+      calc(var(--d, 0ms) + 200ms) both;
+  }
+
+  .reveal.is-in .pole__diamond path {
+    animation: diamond-fill 0.6s ease calc(var(--i, 0) * 140ms + 450ms) both;
+  }
+
+  .value.is-in .value__name::after {
+    animation: rule-draw 0.9s cubic-bezier(0.22, 1, 0.36, 1)
+      calc(var(--d, 0ms) + 350ms) both;
+  }
+
+  .reveal.is-in .founder__rule {
+    animation: rule-draw 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+  }
+}
+
+@keyframes photo-settle {
+  from { transform: scale(1.08); }
+  to { transform: none; }
+}
+
+@keyframes photo-curtain {
+  from { clip-path: inset(100% 0 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes rule-draw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes diamond-fill {
+  from { fill-opacity: 0; }
+  to { fill-opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-arrow {
+    transition: none;
+  }
+}

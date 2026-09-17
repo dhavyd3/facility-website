@@ -101,15 +101,104 @@
     }
   },
   "about": {
-    "eyebrow": "About",
-    "title": "We believe an easier life <em>is built</em>.",
-    "missionLabel": "Our mission",
-    "mission": "We create comfort, wellbeing and joy — in the family and everywhere else.",
-    "convictionLabel": "What we believe",
-    "conviction": "Our services can put that \"wow\" on your face.",
-    "valuesLabel": "Our values",
-    "valuesIntro": "Responsibility, integrity, excellence and service — to make your life easy.",
-    "objectivesLabel": "Our objectives"
+    "metaTitle": "About",
+    "hero": {
+      "eyebrow": "Facility",
+      "title": "Who <em>are we</em>?",
+      "intro": "Facility is your everyday partner in Bujumbura, for families, homes and businesses. We organise your events, from weddings and dowry ceremonies to birthdays and retreats, and we take on what weighs on your days: decorating and cleaning your spaces, managing your rental properties, doing your shopping. We also create spaces and stays where teenagers learn about themselves and grow. One point of contact, one standard, and one goal: to make your life lighter.",
+      "cta": "Write to us",
+      "photoAlt": "Dusenge Kathia Daslim, CEO of Facility, in conversation with two women.",
+      "visionLabel": "Our vision",
+      "vision": "We create comfort, wellbeing and joy — in the family and everywhere else."
+    },
+    "facts": {
+      "base": { "label": "Based in", "value": "Bujumbura" },
+      "poles": { "label": "Two branches", "value": "Events · Services" },
+      "contact": { "label": "Point of contact", "value": "Just one" },
+      "clients": { "label": "For", "value": "Families, owners, businesses" }
+    },
+    "objectives": {
+      "eyebrow": "Why Facility",
+      "title": "Our <em>objectives</em>",
+      "intro": "What we commit to bringing you, in practice.",
+      "items": {
+        "1": "Lift the weight of organising events off your family.",
+        "2": "Create spaces and events for teenagers.",
+        "3": "Bring beauty and calm to your homes and your offices.",
+        "4": "Handle the administration of your property on the owner's behalf.",
+        "5": "Let you do your shopping in comfort."
+      },
+      "closing": "One partner for all of these objectives."
+    },
+    "poles": {
+      "eyebrow": "What we do",
+      "title": "Two branches, <em>one point of contact</em>.",
+      "events": {
+        "name": "Events",
+        "tagline": "Unique moments, designed around you.",
+        "items": {
+          "family": "Family events: weddings, dowry ceremonies, birthdays",
+          "wellbeing": "Wellbeing holidays and retreats",
+          "teenRetreats": "Retreats and camps for teenagers",
+          "teenSpaces": "Wellbeing spaces for teenagers"
+        }
+      },
+      "services": {
+        "name": "Services",
+        "tagline": "An easier everyday life, at home and at work.",
+        "items": {
+          "decoration": "Interior decoration",
+          "cleaning": "Cleaning",
+          "rental": "Rental management",
+          "purchasing": "Purchase facilitation"
+        }
+      },
+      "clientsLabel": "Who it's for",
+      "clients": {
+        "families": "Families",
+        "parents": "Parents",
+        "teens": "Teenagers",
+        "individuals": "Individuals",
+        "landlords": "Landlords",
+        "companies": "Companies",
+        "organisations": "Organisations"
+      },
+      "closing": "Five services. One point of contact. A lighter life."
+    },
+    "values": {
+      "eyebrow": "What guides us",
+      "title": "Our <em>values</em>",
+      "intro": "Responsibility, integrity, excellence and service — to make your life easy.",
+      "items": {
+        "responsibility": {
+          "name": "Responsibility",
+          "body": "What you entrust to us becomes our business. We keep our commitments, from the first conversation to the final detail."
+        },
+        "integrity": {
+          "name": "Integrity",
+          "body": "Clear quotes, promises kept, no surprises. We tell you what is possible, and what is not."
+        },
+        "excellence": {
+          "name": "Excellence",
+          "body": "Care for detail, every single time. A celebration or a cleaning visit: the same standard, and it doesn't move."
+        },
+        "service": {
+          "name": "Service",
+          "body": "Available, attentive, thoughtful. We measure our success by the “wow” on your face."
+        }
+      }
+    },
+    "founder": {
+      "eyebrow": "A word from our CEO",
+      "role": "CEO of Facility",
+      "photoAlt": "Portrait of Dusenge Kathia Daslim, CEO of Facility.",
+      "quote": "Entrusting us with part of your everyday life is an act of trust. We look after it as if it were our own.",
+      "story1": "Facility was born from something I saw far too often around me: in every family, one person carries everything. The celebration to organise, the home to keep, a property to rent out from afar, a teenager searching for their place — and almost no time left for themselves.",
+      "story2": "I wanted those people to finally have someone they could count on: a single partner, reliable and caring, who takes things in hand with the same care as someone close to them. That is how Facility was born, here in Bujumbura.",
+      "story3": "Today, every request is followed personally and every commitment is kept. You tell us what is weighing on you; we take care of it. And our finest reward is still that “wow” on your face.",
+      "signature": "Kathia",
+      "cta": "Tell us about your project"
+    }
   },
   "catalogue": {
     "metaTitle": "Catalogue",

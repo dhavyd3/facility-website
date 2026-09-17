@@ -2,17 +2,13 @@ import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { routing } from "@/i18n/routing";
-import { locales } from "@/site.config";
 import { services } from "@/lib/services";
+import { localeAlternates } from "@/lib/alternates";
 import { ButtonLink } from "@/components/ui/Button";
 import { Meta, RailNumber } from "@/components/ui/Meta";
 import { Section } from "@/components/editorial/Section";
 import { Sparkle } from "@/components/editorial/Sparkle";
 import { richTags } from "@/components/editorial/RichText";
-
-const pathFor = (locale: string) =>
-  locale === routing.defaultLocale ? "/catalogue" : `/${locale}/catalogue`;
 
 export async function generateMetadata({
   params,
@@ -25,10 +21,7 @@ export async function generateMetadata({
   return {
     title: t("metaTitle"),
     description: t("intro"),
-    alternates: {
-      canonical: pathFor(locale),
-      languages: Object.fromEntries(locales.map((l) => [l, pathFor(l)])),
-    },
+    alternates: localeAlternates("/catalogue", locale),
   };
 }
 

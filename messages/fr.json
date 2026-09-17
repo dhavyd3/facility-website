@@ -101,15 +101,104 @@
     }
   },
   "about": {
-    "eyebrow": "À propos",
-    "title": "Nous croyons qu'une vie plus simple <em>se construit</em>.",
-    "missionLabel": "Notre mission",
-    "mission": "Nous créons le confort, le bien-être et la joie en famille et partout ailleurs.",
-    "convictionLabel": "Notre conviction",
-    "conviction": "Nos services peuvent créer l'effet « WOAUW » sur vos visages.",
-    "valuesLabel": "Nos valeurs",
-    "valuesIntro": "La responsabilité, l'intégrité, l'excellence et le service — pour vous faciliter la vie.",
-    "objectivesLabel": "Nos objectifs"
+    "metaTitle": "À propos",
+    "hero": {
+      "eyebrow": "Facility",
+      "title": "Qui <nobr>sommes-<em>nous</em> ?</nobr>",
+      "intro": "Facility est votre partenaire du quotidien à Bujumbura, pour la famille, la maison et l'entreprise. Nous organisons vos événements, des mariages et des dots aux anniversaires et aux retraites, et nous prenons en charge ce qui pèse sur vos journées : la décoration et la propreté de vos espaces, la gestion de vos biens en location, vos achats. Nous créons aussi des espaces et des séjours où les adolescents apprennent à se connaître et à grandir. Un seul interlocuteur, une même exigence, et un objectif : vous rendre la vie plus légère.",
+      "cta": "Nous écrire",
+      "photoAlt": "Dusenge Kathia Daslim, CEO de Facility, en conversation avec deux femmes.",
+      "visionLabel": "Notre vision",
+      "vision": "Nous créons le confort, le bien-être et la joie en famille — et partout ailleurs."
+    },
+    "facts": {
+      "base": { "label": "Basés à", "value": "Bujumbura" },
+      "poles": { "label": "Deux pôles", "value": "Events · Services" },
+      "contact": { "label": "Interlocuteur", "value": "Un seul" },
+      "clients": { "label": "Pour", "value": "Familles, propriétaires, entreprises" }
+    },
+    "objectives": {
+      "eyebrow": "Pourquoi Facility",
+      "title": "Nos <em>objectifs</em>",
+      "intro": "Ce que nous nous engageons à vous apporter, concrètement.",
+      "items": {
+        "1": "Décharger vos familles du poids de l'organisation de leurs événements.",
+        "2": "Mettre en place des espaces et des événements pour adolescents.",
+        "3": "Créer la beauté et l'apaisement dans vos maisons et dans vos bureaux.",
+        "4": "Assurer l'administration de vos biens immobiliers, pour le compte de leur propriétaire.",
+        "5": "Vous permettre de réaliser confortablement vos achats."
+      },
+      "closing": "Un seul partenaire pour tous ces objectifs."
+    },
+    "poles": {
+      "eyebrow": "Ce que nous faisons",
+      "title": "Deux pôles, <em>un seul interlocuteur</em>.",
+      "events": {
+        "name": "Events",
+        "tagline": "Des moments uniques, pensés pour vous.",
+        "items": {
+          "family": "Événements familiaux : mariages, dots, anniversaires",
+          "wellbeing": "Vacances et retraites de bien-être",
+          "teenRetreats": "Retraites et camps pour adolescents",
+          "teenSpaces": "Espaces bien-être pour adolescents"
+        }
+      },
+      "services": {
+        "name": "Services",
+        "tagline": "Un quotidien plus simple, chez vous et au bureau.",
+        "items": {
+          "decoration": "Décoration intérieure",
+          "cleaning": "Propreté",
+          "rental": "Gestion locative",
+          "purchasing": "Facilitation d'achat"
+        }
+      },
+      "clientsLabel": "Pour qui",
+      "clients": {
+        "families": "Familles",
+        "parents": "Parents",
+        "teens": "Adolescents",
+        "individuals": "Particuliers",
+        "landlords": "Propriétaires bailleurs",
+        "companies": "Entreprises",
+        "organisations": "Organisations"
+      },
+      "closing": "Cinq services. Un seul interlocuteur. Une vie plus légère."
+    },
+    "values": {
+      "eyebrow": "Ce qui nous guide",
+      "title": "Nos <em>valeurs</em>",
+      "intro": "La responsabilité, l'intégrité, l'excellence et le service — pour vous faciliter la vie.",
+      "items": {
+        "responsibility": {
+          "name": "Responsabilité",
+          "body": "Ce que vous nous confiez devient notre affaire. Nous tenons nos engagements, du premier échange au dernier détail."
+        },
+        "integrity": {
+          "name": "Intégrité",
+          "body": "Des devis clairs, une parole tenue, aucune surprise. Nous vous disons ce qui est possible, et ce qui ne l'est pas."
+        },
+        "excellence": {
+          "name": "Excellence",
+          "body": "Le soin du détail, à chaque fois. Une fête ou un ménage : le même standard, et il ne bouge pas."
+        },
+        "service": {
+          "name": "Service",
+          "body": "Disponibles, à l'écoute, attentionnés. Notre réussite se mesure à l'effet « WOAUW » sur vos visages."
+        }
+      }
+    },
+    "founder": {
+      "eyebrow": "Un mot de notre CEO",
+      "role": "CEO de Facility",
+      "photoAlt": "Portrait de Dusenge Kathia Daslim, CEO de Facility.",
+      "quote": "Vous confier une partie de votre quotidien, c'est nous accorder votre confiance. Nous en prenons soin comme si c'était le nôtre.",
+      "story1": "Facility est née d'une chose que j'ai vue trop souvent autour de moi : dans chaque famille, quelqu'un porte tout. La fête à organiser, la maison à tenir, un bien à louer à distance, un adolescent qui cherche sa place — et presque plus de temps pour soi.",
+      "story2": "Je voulais que ces personnes aient enfin quelqu'un sur qui compter : un seul partenaire, fiable et attentionné, qui prend les choses en main avec le même soin qu'un proche. C'est ainsi qu'est née Facility, ici à Bujumbura.",
+      "story3": "Aujourd'hui, chaque demande est suivie personnellement et chaque engagement est tenu. Vous nous dites ce qui vous pèse ; nous nous en occupons. Et notre plus belle récompense reste cet effet « WOAUW » sur vos visages.",
+      "signature": "Kathia",
+      "cta": "Parlons de votre projet"
+    }
   },
   "catalogue": {
     "metaTitle": "Catalogue",
