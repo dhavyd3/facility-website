@@ -58,7 +58,9 @@ const sender = () =>
  * localhost during development) falls back to a typeset wordmark.
  */
 const baseUrl = () => {
-  const raw = (process.env.NEXT_PUBLIC_SITE_URL || site.url)
+  // Server-only, so no NEXT_PUBLIC_ prefix: that would ship it to the browser
+  // and Vercel rightly flags it as a value that should stay private.
+  const raw = (process.env.SITE_URL || site.url)
     .trim()
     .replace(/\/+$/, "");
   return /^https:\/\//.test(raw) && !raw.includes("example") ? raw : null;
