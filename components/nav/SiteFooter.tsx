@@ -14,6 +14,7 @@ const isPlaceholder = (value: string) => value.startsWith("TODO");
 
 export async function SiteFooter() {
   const t = await getTranslations("footer");
+  const b = await getTranslations("brand");
   const nav = await getTranslations("nav");
   const s = await getTranslations("services");
   const year = new Date().getFullYear();
@@ -31,6 +32,9 @@ export async function SiteFooter() {
           <Logo theme="dark" size="footer" />
           <p className="display display-md mt-8 max-w-[18ch] text-champagne">
             {t("tagline")}
+          </p>
+          <p className="mt-5 max-w-[38ch] text-sm text-champagne/85">
+            {b("tagline")}
           </p>
         </div>
 

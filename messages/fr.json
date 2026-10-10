@@ -1,7 +1,11 @@
 {
-  "meta": {
-    "tagline": "Make your life easy",
-    "subtitle": "Coaching · Événements · Services"
+  "brand": {
+    "tagline": "Votre partenaire du quotidien à Bujumbura — pour la famille, la maison et l'entreprise.",
+    "vision": "Nous créons le confort, le bien-être et la joie en famille — et partout ailleurs.",
+    "mission": "Vous permettre de vivre des événements uniques et personnalisés, d'avoir envie d'être dans vos maisons et vos bureaux, de mettre en location vos maisons paisiblement et d'acheter confortablement pour la satisfaction de vos différents besoins.",
+    "values": "La responsabilité, l'intégrité, l'excellence et le service pour vous faciliter la vie.",
+    "promise": "Cinq services. Un seul interlocuteur. Une vie plus légère.",
+    "audience": "Que vous soyez une famille, un propriétaire ou une entreprise, Facility s'adapte à votre quotidien."
   },
   "nav": {
     "home": "Accueil",
@@ -16,13 +20,12 @@
     "skipToContent": "Aller au contenu"
   },
   "home": {
-    "eyebrow": "Facility services",
+    "eyebrow": "Facility — Bujumbura",
     "title": "Le confort, le bien-être et la joie — <em>en famille et partout ailleurs</em>.",
-    "intro": "Événements, coaching, ménage, gestion locative, achats. Cinq métiers, un seul interlocuteur, une même exigence.",
     "cta": "Demander un devis",
     "ctaSecondary": "Découvrir nos services",
     "facts": {
-      "services": { "label": "Services", "value": "Cinq métiers" },
+      "services": { "label": "Services", "value": "Cinq" },
       "contact": { "label": "Interlocuteur", "value": "Un seul" },
       "quote": { "label": "Devis", "value": "Sous 48 h" },
       "commitment": { "label": "Engagement", "value": "Aucun" }
@@ -30,7 +33,7 @@
     "mission": {
       "eyebrow": "Notre conviction",
       "title": "Nos services peuvent créer <em>l'effet « WOAUW »</em> sur vos visages.",
-      "body": "Nous créons le confort, le bien-être et la joie en famille et partout ailleurs. C'est notre mission, et c'est la seule mesure qui compte à nos yeux.",
+      "missionLabel": "Notre mission",
       "valuesLabel": "Nos valeurs"
     },
     "values": {
@@ -40,16 +43,16 @@
       "service": "Service"
     },
     "railEyebrow": "Nos services",
-    "railTitle": "Cinq métiers, <em>une même exigence</em>.",
+    "railTitle": "Cinq services, <em>un seul interlocuteur</em>.",
     "closing": {
-      "title": "Dites-nous ce qui vous pèse. <em>Nous nous en occupons.</em>",
+      "title": "Prêt à vous <em>simplifier la vie</em> ?",
       "body": "Un échange suffit pour savoir comment nous pouvons vous aider.",
       "cta": "Nous écrire"
     }
   },
   "services": {
     "eyebrow": "Nos services",
-    "title": "Cinq métiers, <em>une même exigence</em>.",
+    "title": "Cinq services, <em>une vie plus légère</em>.",
     "intro": "Chaque service répond à un objectif précis : vous décharger d'un poids, et vous rendre du temps.",
     "objectiveLabel": "Notre objectif",
     "audienceLabel": "Pour qui",
@@ -66,11 +69,11 @@
     },
     "events": {
       "name": "Organisation d'événements",
-      "short": "Événements familiaux et autres",
-      "objective": "Décharger votre famille du poids de l'organisation.",
-      "audience": "Familles, particuliers, entreprises",
+      "short": "Événements familiaux, de bien-être et de ressourcement",
+      "objective": "Décharger vos familles du poids de l'organisation de leurs événements.",
+      "audience": "Familles, particuliers, entreprises et organisations",
       "title": "Votre événement, <em>sans la charge</em>.",
-      "body": "Des anniversaires aux grandes réunions de famille, nous prenons en main la conception, les prestataires, le calendrier et le jour J. Vous restez l'hôte ; nous portons tout le reste.",
+      "body": "Mariages, dots, anniversaires, réception de vos invités, vacances et retraites de ressourcement : nous prenons en main la conception, les prestataires, le calendrier et le jour J. Vous restez l'hôte ; nous portons tout le reste.",
       "cta": "Parler de votre événement",
       "detail": {
         "photoAlt": "Deux décoratrices installent une réception de mariage : drapé ivoire et centre de table fleuri.",
@@ -83,11 +86,13 @@
         "types": {
           "1": "Mariages et cérémonies religieuses",
           "2": "Dots et cérémonies traditionnelles",
-          "3": "Fêtes de remise de diplôme",
-          "4": "Anniversaires et baptêmes",
-          "5": "Réunions et retrouvailles de famille",
-          "6": "Départs à la retraite et hommages",
-          "7": "Réceptions et séminaires d'entreprise"
+          "3": "Anniversaires et baptêmes",
+          "4": "Réception de vos invités",
+          "5": "Fêtes de remise de diplôme",
+          "6": "Réunions et retrouvailles de famille",
+          "7": "Départs à la retraite et hommages",
+          "8": "Vacances et retraites de bien-être et de ressourcement",
+          "9": "Réceptions et séminaires d'entreprise"
         },
         "includes": {
           "1": "Conception de l'événement : thème, palette de couleurs, plan de salle",
@@ -120,64 +125,62 @@
         "note": "Vous avez déjà un lieu ou un traiteur ? Nous nous adaptons et ne prenons en charge que ce qui vous manque."
       }
     },
-    "coaching": {
-      "name": "Coaching d'adolescents",
-      "short": "Accompagnement, retraites et camps",
-      "objective": "Aider votre adolescent à surmonter la crise d'adolescence et à bâtir un meilleur avenir.",
+    "teens": {
+      "name": "Espaces et événements pour adolescents",
+      "short": "Retraites, camps et espaces bien-être",
+      "objective": "Mettre en place des espaces et des événements pour adolescents.",
       "audience": "Parents et adolescents",
-      "title": "Traverser l'adolescence, <em>et en sortir plus fort</em>.",
-      "body": "Un accompagnement patient, structuré et confidentiel : confiance en soi, orientation, relations familiales, méthode de travail. Nous travaillons avec l'adolescent, et avec les parents.",
-      "cta": "Réserver un premier entretien",
+      "title": "Se connaître, <em>grandir, s'amuser</em>.",
+      "body": "Des retraites et des camps de ressourcement pour permettre aux adolescents de se connaître et de se développer, et des espaces bien-être : des cadres de rencontre pour apprendre et socialiser en s'amusant.",
+      "cta": "Se renseigner",
       "detail": {
         "photoAlt": "Une salle claire préparée pour un groupe d'adolescents : cercle de chaises, carnets et paperboard.",
         "facts": {
-          "format": { "label": "Format", "value": "Individuel ou en groupe" },
-          "frame": { "label": "Cadre", "value": "Strictement confidentiel" },
+          "format": { "label": "Formats", "value": "Retraites, camps, espaces" },
+          "frame": { "label": "Esprit", "value": "Apprendre en s'amusant" },
           "audience": { "label": "Pour", "value": "Parents et adolescents" }
         },
-        "typesLabel": "Ce sur quoi nous travaillons",
+        "typesLabel": "Ce que nous mettons en place",
         "types": {
-          "1": "Confiance en soi et estime de soi",
-          "2": "Orientation scolaire et projet d'avenir",
-          "3": "Méthode de travail et organisation",
-          "4": "Relations familiales et communication à la maison",
-          "5": "Gestion des émotions, du stress et des conflits",
-          "6": "Vie sociale, pression des pairs et usage des écrans"
+          "1": "Retraites de ressourcement",
+          "2": "Camps pour adolescents",
+          "3": "Espaces bien-être",
+          "4": "Rencontres pour apprendre et socialiser en s'amusant"
         },
         "includes": {
-          "1": "Un premier entretien pour poser le cadre, avec les parents et l'adolescent",
-          "2": "Des séances individuelles régulières, en toute confidentialité",
-          "3": "Des séances avec les parents, pour avancer dans le même sens",
-          "4": "Des retraites et des camps de ressourcement pendant les vacances",
-          "5": "Des espaces bien-être : un cadre de rencontre pour apprendre et socialiser en s'amusant",
-          "6": "Des ateliers de groupe : prise de parole, gestion du temps, projet personnel",
-          "7": "Un point d'étape avec les parents à la fin de chaque cycle"
+          "1": "Des retraites de ressourcement, pour prendre du recul et apprendre à se connaître",
+          "2": "Des camps, pour se développer au contact des autres",
+          "3": "Des espaces bien-être : des cadres de rencontre pour apprendre et socialiser en s'amusant",
+          "4": "Un programme pensé pour leur âge : ateliers, échanges, jeux et temps calmes",
+          "5": "Le lieu, les repas et le matériel, organisés par nos soins",
+          "6": "Une équipe présente auprès du groupe, du début à la fin",
+          "7": "Un retour aux parents après chaque événement"
         },
         "process": {
           "1": {
-            "title": "Premier contact",
-            "body": "Vous nous dites ce qui vous inquiète. Nous convenons d'un premier entretien, sans engagement."
+            "title": "Nous vous écoutons",
+            "body": "Un premier échange avec les parents : l'âge de votre adolescent, ce qu'il aime et ce que vous espérez pour lui."
           },
           "2": {
-            "title": "Nous posons le cadre",
-            "body": "Objectifs, rythme des séances et règles de confidentialité, acceptés par l'adolescent comme par les parents."
+            "title": "Nous proposons",
+            "body": "Une retraite, un camp ou un espace bien-être, avec son programme, ses dates et un devis."
           },
           "3": {
-            "title": "Nous accompagnons",
-            "body": "Des séances régulières, des exercices concrets entre deux rendez-vous, et des camps s'il en a envie."
+            "title": "Nous préparons",
+            "body": "Lieu, programme, équipe, matériel : tout est organisé et confirmé avant le départ."
           },
           "4": {
-            "title": "Nous faisons le point",
-            "body": "À la fin de chaque cycle, un bilan avec la famille : ce qui a avancé, ce qui reste à construire."
+            "title": "Ils en profitent",
+            "body": "Sur place, les adolescents apprennent, se rencontrent et s'amusent. Au retour, nous vous racontons comment cela s'est passé."
           }
         },
-        "note": "Ce que l'adolescent nous confie reste confidentiel. Nous partageons avec les parents les avancées, jamais les confidences."
+        "note": "Un groupe d'amis, une classe ou une organisation ? Nous pouvons mettre en place une retraite ou un camp sur mesure."
       }
     },
     "home": {
-      "name": "Ménage et décoration",
-      "short": "Propreté régulière et décoration intérieure",
-      "objective": "Créer la beauté et l'apaisement dans vos maisons et dans vos bureaux.",
+      "name": "Décoration intérieure et propreté",
+      "short": "Pour vos maisons et vos bureaux",
+      "objective": "Créer la beauté et l'apaisement dans vos maisons et vos bureaux.",
       "audience": "Maisons et bureaux",
       "title": "Une maison nette, <em>un esprit tranquille</em>.",
       "body": "Un passage régulier, une équipe constante, un standard qui ne bouge pas. Et si vous le souhaitez, un regard de décoration pour que l'espace ne soit pas seulement propre, mais beau.",
@@ -230,9 +233,9 @@
       }
     },
     "property": {
-      "name": "Gestion de biens locatifs",
+      "name": "Gestion locative",
       "short": "Airbnb, appartements, biens à distance",
-      "objective": "Vous permettre d'encaisser facilement vos loyers.",
+      "objective": "Assurer un travail d'administration des maisons et des immeubles mis en location de la part des propriétaires.",
       "audience": "Propriétaires absents ou occupés",
       "title": "Votre bien, <em>entre de bonnes mains</em>.",
       "body": "Pour les propriétaires loin de leurs biens ou simplement trop occupés : accueil des locataires, entretien, petites réparations, suivi des loyers et compte rendu régulier. Vous recevez ; nous veillons.",
@@ -348,8 +351,10 @@
       "intro": "Facility est votre partenaire du quotidien à Bujumbura, pour la famille, la maison et l'entreprise. Nous organisons vos événements, des mariages et des dots aux anniversaires et aux retraites, et nous prenons en charge ce qui pèse sur vos journées : la décoration et la propreté de vos espaces, la gestion de vos biens en location, vos achats. Nous créons aussi des espaces et des séjours où les adolescents apprennent à se connaître et à grandir. Un seul interlocuteur, une même exigence, et un objectif : vous rendre la vie plus légère.",
       "cta": "Nous écrire",
       "photoAlt": "Dusenge Kathia Daslim, CEO de Facility, en conversation avec deux femmes.",
-      "visionLabel": "Notre vision",
-      "vision": "Nous créons le confort, le bien-être et la joie en famille — et partout ailleurs."
+      "visionLabel": "Notre vision"
+    },
+    "mission": {
+      "label": "Notre mission"
     },
     "facts": {
       "base": { "label": "Basés à", "value": "Bujumbura" },
@@ -361,13 +366,6 @@
       "eyebrow": "Pourquoi Facility",
       "title": "Nos <em>objectifs</em>",
       "intro": "Ce que nous nous engageons à vous apporter, concrètement.",
-      "items": {
-        "1": "Décharger vos familles du poids de l'organisation de leurs événements.",
-        "2": "Mettre en place des espaces et des événements pour adolescents.",
-        "3": "Créer la beauté et l'apaisement dans vos maisons et dans vos bureaux.",
-        "4": "Assurer l'administration de vos biens immobiliers, pour le compte de leur propriétaire.",
-        "5": "Vous permettre de réaliser confortablement vos achats."
-      },
       "closing": "Un seul partenaire pour tous ces objectifs."
     },
     "poles": {
@@ -377,10 +375,10 @@
         "name": "Events",
         "tagline": "Des moments uniques, pensés pour vous.",
         "items": {
-          "family": "Événements familiaux : mariages, dots, anniversaires",
-          "wellbeing": "Vacances et retraites de bien-être",
-          "teenRetreats": "Retraites et camps pour adolescents",
-          "teenSpaces": "Espaces bien-être pour adolescents"
+          "family": "Événements familiaux circonstanciels (mariages, dots, anniversaires, réception des invités, etc.)",
+          "wellbeing": "Événements de bien-être et de ressourcement (vacances, retraites, etc.)",
+          "teenRetreats": "Événements de ressourcement pour permettre aux adolescents de se connaître et de se développer (retraites, camps)",
+          "teenSpaces": "Espaces bien-être pour adolescents (cadres de rencontre pour apprendre et socialiser en s'amusant)"
         }
       },
       "services": {
@@ -402,13 +400,11 @@
         "landlords": "Propriétaires bailleurs",
         "companies": "Entreprises",
         "organisations": "Organisations"
-      },
-      "closing": "Cinq services. Un seul interlocuteur. Une vie plus légère."
+      }
     },
     "values": {
       "eyebrow": "Ce qui nous guide",
       "title": "Nos <em>valeurs</em>",
-      "intro": "La responsabilité, l'intégrité, l'excellence et le service — pour vous faciliter la vie.",
       "items": {
         "responsibility": {
           "name": "Responsabilité",
@@ -444,12 +440,12 @@
     "metaTitle": "Catalogue",
     "eyebrow": "Catalogue",
     "title": "Aucun catalogue, <em>pour l'instant</em>.",
-    "intro": "Chaque réalisation sera partagée sur cette page : les événements, les maisons, les parcours. Les premières s'écrivent en ce moment.",
+    "intro": "Chaque réalisation sera partagée sur cette page : les événements, les maisons, les séjours. Les premières s'écrivent en ce moment.",
     "placardNumber": "N° 01",
     "placardTitle": "Votre projet",
     "placardCaption": "Le premier « WOAUW » est en route.",
     "wallEyebrow": "Bientôt sur ce mur",
-    "wallTitle": "Cinq métiers, <em>cinq cadres vides</em>.",
+    "wallTitle": "Cinq services, <em>cinq cadres vides</em>.",
     "awaiting": "En attente de sa première réalisation",
     "yoursLabel": "Cadre 06",
     "yoursTitle": "Le vôtre, <em>peut-être</em> ?",

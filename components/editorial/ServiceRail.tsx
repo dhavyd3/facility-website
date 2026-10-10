@@ -26,6 +26,7 @@ import { RailProgress } from "./RailProgress";
  */
 export async function ServiceRail() {
   const t = await getTranslations("services");
+  const a = await getTranslations("about");
   const last = services.length - 1;
 
   return (
@@ -51,8 +52,13 @@ export async function ServiceRail() {
                 href={`/services/${service.slug}`}
                 className="group block max-w-2xl pb-20"
               >
-                <span className="flex items-baseline gap-4">
-                  <RailNumber>{service.index}</RailNumber>
+                {/* Number and branch stay together; on a phone the summary
+                    drops to its own line rather than wrapping in a sliver. */}
+                <span className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-9">
+                  <span className="flex items-baseline gap-4">
+                    <RailNumber>{service.index}</RailNumber>
+                    <Meta tone="accent">{a(`poles.${service.pole}.name`)}</Meta>
+                  </span>
                   <Meta tone="muted">{t(`${service.id}.short`)}</Meta>
                 </span>
 

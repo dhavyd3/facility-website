@@ -77,7 +77,7 @@ function logoBlock(origin: string | null) {
   if (origin) {
     return `<img src="${origin}/brand/facility-mark-dark.png" width="64" height="41" alt="${esc(site.name)}" style="display:block;border:0;outline:none;text-decoration:none;" />`;
   }
-  return `<div style="font-family:${DISPLAY};font-size:15px;line-height:1.2;color:${GOLD_ON_DARK};">F.S</div>`;
+  return `<div style="font-family:${DISPLAY};font-size:15px;line-height:1.2;color:${GOLD_ON_DARK};">${esc(site.name)}</div>`;
 }
 
 export function renderEnquiryEmail({

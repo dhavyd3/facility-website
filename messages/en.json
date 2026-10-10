@@ -1,7 +1,11 @@
 {
-  "meta": {
-    "tagline": "Make your life easy",
-    "subtitle": "Coaching · Events · Services"
+  "brand": {
+    "tagline": "Your everyday partner in Bujumbura — for families, homes and businesses.",
+    "vision": "We create comfort, wellbeing and joy — in the family and everywhere else.",
+    "mission": "To let you enjoy unique, personalised events, to make you want to be in your homes and your offices, to let you rent out your houses with peace of mind, and to let you shop in comfort for whatever you need.",
+    "values": "Responsibility, integrity, excellence and service, to make your life easy.",
+    "promise": "Five services. One point of contact. A lighter life.",
+    "audience": "Whether you are a family, a property owner or a business, Facility fits around your everyday life."
   },
   "nav": {
     "home": "Home",
@@ -16,13 +20,12 @@
     "skipToContent": "Skip to content"
   },
   "home": {
-    "eyebrow": "Facility services",
+    "eyebrow": "Facility — Bujumbura",
     "title": "Comfort, wellbeing and joy — <em>at home and everywhere else</em>.",
-    "intro": "Events, coaching, housekeeping, property management, purchasing. Five disciplines, one point of contact, one standard.",
     "cta": "Request a quote",
     "ctaSecondary": "See our services",
     "facts": {
-      "services": { "label": "Services", "value": "Five disciplines" },
+      "services": { "label": "Services", "value": "Five" },
       "contact": { "label": "Point of contact", "value": "Just one" },
       "quote": { "label": "Quote", "value": "Within 48 h" },
       "commitment": { "label": "Commitment", "value": "None" }
@@ -30,7 +33,7 @@
     "mission": {
       "eyebrow": "What we believe",
       "title": "Our services can put <em>that \"wow\"</em> on your face.",
-      "body": "We create comfort, wellbeing and joy — in the family and everywhere else. That is our mission, and it is the only measure that matters to us.",
+      "missionLabel": "Our mission",
       "valuesLabel": "Our values"
     },
     "values": {
@@ -40,16 +43,16 @@
       "service": "Service"
     },
     "railEyebrow": "Our services",
-    "railTitle": "Five disciplines, <em>one standard</em>.",
+    "railTitle": "Five services, <em>one point of contact</em>.",
     "closing": {
-      "title": "Tell us what's weighing on you. <em>We'll take it from here.</em>",
+      "title": "Ready to make <em>your life simpler</em>?",
       "body": "One conversation is enough to know how we can help.",
       "cta": "Get in touch"
     }
   },
   "services": {
     "eyebrow": "Our services",
-    "title": "Five disciplines, <em>one standard</em>.",
+    "title": "Five services, <em>a lighter life</em>.",
     "intro": "Each service answers one clear objective: lift a weight off you, and give you back your time.",
     "objectiveLabel": "Our objective",
     "audienceLabel": "Who it's for",
@@ -66,11 +69,11 @@
     },
     "events": {
       "name": "Event planning",
-      "short": "Family events and beyond",
-      "objective": "Lift the weight of organising off your family.",
-      "audience": "Families, individuals, companies",
+      "short": "Family, wellbeing and renewal events",
+      "objective": "Lift the weight of organising their events off your families.",
+      "audience": "Families, individuals, companies and organisations",
       "title": "Your event, <em>without the load</em>.",
-      "body": "From birthdays to large family gatherings, we take on the design, the suppliers, the schedule and the day itself. You stay the host; we carry everything else.",
+      "body": "Weddings, dowry ceremonies, birthdays, receiving your guests, wellbeing holidays and retreats: we take on the design, the suppliers, the schedule and the day itself. You stay the host; we carry everything else.",
       "cta": "Talk about your event",
       "detail": {
         "photoAlt": "Two decorators setting up a wedding reception: ivory drapery and a floral centrepiece.",
@@ -83,11 +86,13 @@
         "types": {
           "1": "Weddings and religious ceremonies",
           "2": "Dowry and traditional ceremonies",
-          "3": "Graduation celebrations",
-          "4": "Birthdays and christenings",
-          "5": "Family gatherings and reunions",
-          "6": "Retirement parties and tributes",
-          "7": "Corporate receptions and seminars"
+          "3": "Birthdays and christenings",
+          "4": "Receiving your guests",
+          "5": "Graduation celebrations",
+          "6": "Family gatherings and reunions",
+          "7": "Retirement parties and tributes",
+          "8": "Wellbeing and renewal holidays and retreats",
+          "9": "Corporate receptions and seminars"
         },
         "includes": {
           "1": "The design of the event: theme, colour palette, floor plan",
@@ -120,63 +125,61 @@
         "note": "Already have a venue or a caterer? We fit around them and take on only what you are missing."
       }
     },
-    "coaching": {
-      "name": "Teen coaching",
-      "short": "Coaching, retreats and camps",
-      "objective": "Help your teenager through the adolescent crisis and build a better future.",
+    "teens": {
+      "name": "Spaces and events for teenagers",
+      "short": "Retreats, camps and wellbeing spaces",
+      "objective": "Create spaces and events for teenagers.",
       "audience": "Parents and teenagers",
-      "title": "Through adolescence, <em>and stronger for it</em>.",
-      "body": "Patient, structured, confidential support: confidence, direction, family relationships, study method. We work with the teenager, and with the parents.",
-      "cta": "Book a first session",
+      "title": "Know yourself, <em>grow, have fun</em>.",
+      "body": "Retreats and camps where teenagers get to know themselves and grow, and wellbeing spaces: places to meet, learn and socialise while having fun.",
+      "cta": "Find out more",
       "detail": {
         "photoAlt": "A bright room set up for a teenagers' group: a circle of chairs, notebooks and a flip chart.",
         "facts": {
-          "format": { "label": "Format", "value": "One-to-one or group" },
-          "frame": { "label": "Setting", "value": "Strictly confidential" },
+          "format": { "label": "Formats", "value": "Retreats, camps, spaces" },
+          "frame": { "label": "Spirit", "value": "Learning through fun" },
           "audience": { "label": "For", "value": "Parents and teenagers" }
         },
-        "typesLabel": "What we work on",
+        "typesLabel": "What we put in place",
         "types": {
-          "1": "Confidence and self-esteem",
-          "2": "School choices and plans for the future",
-          "3": "Study method and organisation",
-          "4": "Family relationships and talking at home",
-          "5": "Handling emotions, stress and conflict",
-          "6": "Social life, peer pressure and screen time"
+          "1": "Renewal retreats",
+          "2": "Camps for teenagers",
+          "3": "Wellbeing spaces",
+          "4": "Meet-ups to learn and socialise while having fun"
         },
         "includes": {
-          "1": "A first conversation to set the frame, with the parents and the teenager",
-          "2": "Regular one-to-one sessions, in full confidence",
-          "3": "Sessions with the parents, so everyone pulls the same way",
-          "4": "Retreats and camps during the holidays",
-          "5": "Wellbeing spaces: somewhere to meet, learn and socialise while having fun",
-          "6": "Group workshops: speaking up, managing time, a personal project",
-          "7": "A progress review with the parents at the end of each cycle"
+          "1": "Renewal retreats, to step back and get to know yourself",
+          "2": "Camps, to grow alongside others",
+          "3": "Wellbeing spaces: places to meet, learn and socialise while having fun",
+          "4": "A programme designed for their age: workshops, conversations, games and quiet time",
+          "5": "The venue, the meals and the equipment, all arranged by us",
+          "6": "A team alongside the group from start to finish",
+          "7": "Feedback to parents after every event"
         },
         "process": {
           "1": {
-            "title": "First contact",
-            "body": "You tell us what worries you. We agree on a first conversation, with no commitment."
+            "title": "We listen",
+            "body": "A first conversation with the parents: your teenager's age, what they enjoy and what you hope for them."
           },
           "2": {
-            "title": "We set the frame",
-            "body": "Goals, how often you meet and the rules of confidentiality, agreed by the teenager and the parents alike."
+            "title": "We propose",
+            "body": "A retreat, a camp or a wellbeing space, with its programme, its dates and a quote."
           },
           "3": {
-            "title": "We walk alongside",
-            "body": "Regular sessions, concrete exercises between them, and camps if they want to go."
+            "title": "We prepare",
+            "body": "Venue, programme, team, equipment: everything arranged and confirmed before they leave."
           },
           "4": {
-            "title": "We take stock",
-            "body": "At the end of each cycle, a review with the family: what has moved, what is still to build."
+            "title": "They enjoy it",
+            "body": "On the day, the teenagers learn, meet each other and have fun. Afterwards, we tell you how it went."
           }
         },
-        "note": "What a teenager tells us stays confidential. We share progress with parents, never confidences."
+        "note": "A group of friends, a class or an organisation? We can put together a retreat or a camp made to measure."
       }
     },
     "home": {
-      "name": "Housekeeping and decoration",
-      "short": "Regular cleaning and interior decoration",
+      "name": "Interior decoration and cleaning",
+      "short": "For your homes and your offices",
       "objective": "Create beauty and calm in your homes and your offices.",
       "audience": "Homes and offices",
       "title": "A clean home, <em>a quiet mind</em>.",
@@ -230,9 +233,9 @@
       }
     },
     "property": {
-      "name": "Property management",
+      "name": "Rental management",
       "short": "Airbnb, apartments, property at a distance",
-      "objective": "Let you collect your rent without the hassle.",
+      "objective": "Administer the houses and buildings put up for rent, on their owners' behalf.",
       "audience": "Absent or busy owners",
       "title": "Your property, <em>in good hands</em>.",
       "body": "For owners far from their property, or simply too busy: welcoming tenants, upkeep, small repairs, rent tracking and a regular report. You collect; we keep watch.",
@@ -348,8 +351,10 @@
       "intro": "Facility is your everyday partner in Bujumbura, for families, homes and businesses. We organise your events, from weddings and dowry ceremonies to birthdays and retreats, and we take on what weighs on your days: decorating and cleaning your spaces, managing your rental properties, doing your shopping. We also create spaces and stays where teenagers learn about themselves and grow. One point of contact, one standard, and one goal: to make your life lighter.",
       "cta": "Write to us",
       "photoAlt": "Dusenge Kathia Daslim, CEO of Facility, in conversation with two women.",
-      "visionLabel": "Our vision",
-      "vision": "We create comfort, wellbeing and joy — in the family and everywhere else."
+      "visionLabel": "Our vision"
+    },
+    "mission": {
+      "label": "Our mission"
     },
     "facts": {
       "base": { "label": "Based in", "value": "Bujumbura" },
@@ -361,13 +366,6 @@
       "eyebrow": "Why Facility",
       "title": "Our <em>objectives</em>",
       "intro": "What we commit to bringing you, in practice.",
-      "items": {
-        "1": "Lift the weight of organising events off your family.",
-        "2": "Create spaces and events for teenagers.",
-        "3": "Bring beauty and calm to your homes and your offices.",
-        "4": "Handle the administration of your property on the owner's behalf.",
-        "5": "Let you do your shopping in comfort."
-      },
       "closing": "One partner for all of these objectives."
     },
     "poles": {
@@ -377,10 +375,10 @@
         "name": "Events",
         "tagline": "Unique moments, designed around you.",
         "items": {
-          "family": "Family events: weddings, dowry ceremonies, birthdays",
-          "wellbeing": "Wellbeing holidays and retreats",
-          "teenRetreats": "Retreats and camps for teenagers",
-          "teenSpaces": "Wellbeing spaces for teenagers"
+          "family": "Family occasions (weddings, dowry ceremonies, birthdays, receiving guests, etc.)",
+          "wellbeing": "Wellbeing and renewal events (holidays, retreats, etc.)",
+          "teenRetreats": "Renewal events that help teenagers get to know themselves and grow (retreats, camps)",
+          "teenSpaces": "Wellbeing spaces for teenagers (places to meet, learn and socialise while having fun)"
         }
       },
       "services": {
@@ -402,13 +400,11 @@
         "landlords": "Landlords",
         "companies": "Companies",
         "organisations": "Organisations"
-      },
-      "closing": "Five services. One point of contact. A lighter life."
+      }
     },
     "values": {
       "eyebrow": "What guides us",
       "title": "Our <em>values</em>",
-      "intro": "Responsibility, integrity, excellence and service — to make your life easy.",
       "items": {
         "responsibility": {
           "name": "Responsibility",
@@ -444,12 +440,12 @@
     "metaTitle": "Catalogue",
     "eyebrow": "Catalogue",
     "title": "No catalogue <em>yet</em>.",
-    "intro": "Every project we complete will be shared on this page: the events, the homes, the journeys. The first ones are being written now.",
+    "intro": "Every project we complete will be shared on this page: the events, the homes, the stays. The first ones are being written now.",
     "placardNumber": "No. 01",
     "placardTitle": "Your project",
     "placardCaption": "The first “wow” is on its way.",
     "wallEyebrow": "Coming to this wall",
-    "wallTitle": "Five disciplines, <em>five empty frames</em>.",
+    "wallTitle": "Five services, <em>five empty frames</em>.",
     "awaiting": "Awaiting its first project",
     "yoursLabel": "Frame 06",
     "yoursTitle": "Yours, <em>perhaps</em>?",

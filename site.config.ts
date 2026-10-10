@@ -1,13 +1,14 @@
 /**
  * Every real-world fact about the business lives here, in one place.
  *
- * Contact details come from the client's brochure (FACILITY - Brochure FR).
- * Anything still marked TODO is withheld by the components that print it, so
- * a placeholder can never reach a visitor.
+ * The name, the descriptor and the contact details come from the client's
+ * brochure (FACILITY - Brochure FR). Anything still marked TODO is withheld by
+ * the components that print it, so a placeholder can never reach a visitor.
  */
 export const site = {
-  name: "Facility services",
-  shortName: "F.S",
+  name: "Facility",
+  /** The line under the wordmark: the two branches of the business. */
+  descriptor: "Events · Services",
   motto: "Make your life easy.",
 
   country: "Burundi",
@@ -44,5 +45,4 @@ export const OPEN_ITEMS = [
   "Social handles",
   "Registered legal name for the footer",
   "Vector (SVG) logo — the supplied PNGs are 500x500 and will look soft",
-  "Confirm the logo is final: its subtitle names 3 of the 5 service lines",
 ] as const;

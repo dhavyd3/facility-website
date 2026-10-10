@@ -16,6 +16,7 @@ export default async function HomePage({
   setRequestLocale(locale);
 
   const t = await getTranslations("home");
+  const b = await getTranslations("brand");
 
   const facts = (["services", "contact", "quote", "commitment"] as const).map(
     (key) => ({
@@ -33,7 +34,7 @@ export default async function HomePage({
       <Hero
         eyebrow={t("eyebrow")}
         title={t.rich("title", richTags)}
-        intro={t("intro")}
+        intro={`${b("tagline")} ${b("promise")}`}
         facts={facts}
         actions={
           <>
@@ -62,9 +63,12 @@ export default async function HomePage({
             <h2 className="display display-lg mt-6">
               {t.rich("mission.title", richTags)}
             </h2>
-            <p className="prose-measure mt-8 text-lg text-champagne/85">
-              {t("mission.body")}
-            </p>
+            <div className="mt-12 border-t border-[var(--gold-rule)]/30 pt-8">
+              <Meta tone="accent">{t("mission.missionLabel")}</Meta>
+              <p className="prose-measure mt-4 text-lg text-champagne/85">
+                {b("mission")}
+              </p>
+            </div>
           </div>
 
           <div className="reveal lg:pt-4">
@@ -79,6 +83,9 @@ export default async function HomePage({
                 </li>
               ))}
             </ul>
+            <p className="border-t border-[var(--gold-rule)]/30 pt-6 text-champagne/85">
+              {b("values")}
+            </p>
           </div>
         </div>
       </Section>

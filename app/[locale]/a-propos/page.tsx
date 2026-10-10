@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { site } from "@/site.config";
+import { services } from "@/lib/services";
 import { localeAlternates } from "@/lib/alternates";
 import { ArrowLink, ButtonLink } from "@/components/ui/Button";
 import { Meta } from "@/components/ui/Meta";
@@ -12,9 +13,13 @@ import { Photo } from "@/components/editorial/Photo";
 import { richTags } from "@/components/editorial/RichText";
 
 /**
- * The About page, built from the client's brochure: who Facility is, its five
- * objectives, the two branches of what it does, its values, and a word from
- * the CEO.
+ * The About page, built from the client's brochure: who Facility is, its
+ * vision and mission, its five objectives, the two branches of what it does,
+ * its values, and a word from the CEO.
+ *
+ * The brochure's own sentences live in the `brand` messages, and each objective
+ * is read off the service that delivers it, so this page cannot drift from the
+ * rest of the site.
  *
  * Both photographs are AI-generated from a character trained on the CEO's own
  * photos. The CEO should approve them, and the story written in her voice,
@@ -24,15 +29,6 @@ const PHOTOS = {
   conversation: "/about/kathia-conversation.jpg",
   portrait: "/about/kathia-portrait.jpg",
 } as const;
-
-/** Each objective belongs to one of the two branches. */
-const OBJECTIVES = [
-  { n: "1", pole: "events" },
-  { n: "2", pole: "events" },
-  { n: "3", pole: "services" },
-  { n: "4", pole: "services" },
-  { n: "5", pole: "services" },
-] as const;
 
 const POLES = [
   {
@@ -67,10 +63,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "about" });
+  const b = await getTranslations({ locale, namespace: "brand" });
 
   return {
     title: t("metaTitle"),
-    description: t("hero.vision"),
+    description: b("vision"),
     alternates: localeAlternates("/a-propos", locale),
   };
 }
@@ -84,6 +81,7 @@ export default async function AboutPage({
   setRequestLocale(locale);
 
   const t = await getTranslations("about");
+  const b = await getTranslations("brand");
   const s = await getTranslations("services");
 
   const facts = (["base", "poles", "contact", "clients"] as const).map(
@@ -116,12 +114,19 @@ export default async function AboutPage({
             <figcaption className="mt-6 hairline-t pt-5">
               <Meta tone="muted">{t("hero.visionLabel")}</Meta>
               <p className="mt-2 font-display text-xl italic text-gold">
-                {t("hero.vision")}
+                {b("vision")}
               </p>
             </figcaption>
           </figure>
         }
       />
+
+      {/* ------------------------------ Mission ----------------------------- */}
+      <Section tone="dark" eyebrow={t("mission.label")}>
+        <p className="display display-md reveal mt-8 max-w-5xl">
+          {b("mission")}
+        </p>
+      </Section>
 
       {/* ---------------------------- Objectives ---------------------------- */}
       <Section tone="champagne">
@@ -138,18 +143,18 @@ export default async function AboutPage({
 
           <div>
             <ol>
-              {OBJECTIVES.map(({ n, pole }, i) => (
+              {services.map(({ id, index, pole }, i) => (
                 <li
-                  key={n}
+                  key={id}
                   className="objective reveal"
                   style={{ "--d": `${i * 90}ms` } as CSSProperties}
                 >
                   <span className="objective__no" aria-hidden="true">
-                    0{n}
+                    {index}
                   </span>
                   <div>
                     <p className="display objective__text">
-                      {t(`objectives.items.${n}`)}
+                      {s(`${id}.objective`)}
                     </p>
                     <Meta tone="muted" as="p" className="mt-3">
                       {t(`poles.${pole}.name`)}
@@ -210,16 +215,19 @@ export default async function AboutPage({
           <Meta tone="muted" className="shrink-0">
             {t("poles.clientsLabel")}
           </Meta>
-          <ul className="clients">
-            {CLIENTS.map((client) => (
-              <li key={client}>{t(`poles.clients.${client}`)}</li>
-            ))}
-          </ul>
+          <div>
+            <ul className="clients">
+              {CLIENTS.map((client) => (
+                <li key={client}>{t(`poles.clients.${client}`)}</li>
+              ))}
+            </ul>
+            <p className="prose-measure mt-5 text-muted">{b("audience")}</p>
+          </div>
         </div>
 
         <div className="reveal mt-14 flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
           <p className="font-display text-2xl italic text-gold">
-            {t("poles.closing")}
+            {b("promise")}
           </p>
           <ButtonLink href="/services" variant="solid">
             {s("learnMore")}
@@ -235,7 +243,7 @@ export default async function AboutPage({
         tone="dark"
         eyebrow={t("values.eyebrow")}
         title={t.rich("values.title", richTags)}
-        intro={t("values.intro")}
+        intro={b("values")}
       >
         <ol className="values mt-16">
           {VALUES.map((value, i) => (

@@ -100,11 +100,12 @@ export default async function ServicePage({
       />
 
       {/* ----------------------- What it includes ----------------------- */}
-      <Section
-        tone="champagne"
-        eyebrow={t("includesLabel")}
-        title={t(`${id}.objective`)}
-      >
+      {/* The objective is the brochure's own sentence, and some run long, so
+          it is set a size below the usual section heading. */}
+      <Section tone="champagne" eyebrow={t("includesLabel")}>
+        <h2 className="display display-md reveal mt-6 max-w-4xl">
+          {t(`${id}.objective`)}
+        </h2>
         <ul className="spec-list mt-14">
           {Object.entries(detail.includes).map(([key, item]) => (
             <li key={key} className="spec-item">

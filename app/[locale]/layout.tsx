@@ -42,14 +42,14 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "home" });
+  const t = await getTranslations({ locale, namespace: "brand" });
 
   return {
     title: {
-      default: `${site.name} — ${site.motto}`,
+      default: `${site.name} · ${site.descriptor} — ${site.motto}`,
       template: `%s — ${site.name}`,
     },
-    description: t("intro"),
+    description: `${t("tagline")} ${t("promise")}`,
     alternates: {
       canonical: locale === routing.defaultLocale ? "/" : `/${locale}`,
       languages: Object.fromEntries(
