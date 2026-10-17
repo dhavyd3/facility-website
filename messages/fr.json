@@ -31,7 +31,7 @@
       "commitment": { "label": "Engagement", "value": "Aucun" }
     },
     "mission": {
-      "eyebrow": "Notre conviction",
+      "eyebrow": "Notre vision",
       "title": "Nos services peuvent créer <em>l'effet « WOAUW »</em> sur vos visages.",
       "missionLabel": "Notre mission",
       "valuesLabel": "Nos valeurs"
@@ -292,7 +292,7 @@
       "objective": "Vous permettre de réaliser confortablement vos achats.",
       "audience": "Particuliers et entreprises",
       "title": "Ce qu'il vous faut, <em>trouvé et livré</em>.",
-      "body": "En ligne ou sur les marchés locaux, nous cherchons, comparons, négocions et livrons. Dites-nous ce que vous cherchez : nous revenons vers vous avec une proposition claire.",
+      "body": "En ligne ou sur les marchés locaux, nous cherchons, comparons, négocions et livrons. Dites-nous ce que vous cherchez et nous revenons vers vous avec une proposition claire.",
       "cta": "Faire une demande",
       "detail": {
         "photoAlt": "Une acheteuse compare des tissus au marché, liste en main et paniers remplis.",
